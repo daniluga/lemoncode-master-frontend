@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout - 01 Introducción al CSS</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Enlazamos fichero para el CSS Externo -->
+  <style>
+    /* CSS interno para todos los 'p' */
+    p {
+      color: darkgreen;
+    }
+  </style>
+</head>
+<body>
+  <h1>🍋 Módulo Layout 🍋</h1>
+  <h2>Introducción al CSS</h2>
+  <h3>En todos los hX uso CSS Externo (el mejor)</h3>
+  <div>
+    <p class="selectores-basicos">Comenzamos con los selectores básicos: selector/.clase/#id</p>
+    <h4 class="other-title">Otro título, pero en H4</h4>
+    <p style="color: purple;">Aquí se está usando CSS en línea.</p>
+    <p class="shorthand">Este párrafo tiene CSS shorthand.</p>
+    <p class="no-shorthand">Este párrafo NO tiene CSS shorthand.</p>
+    <p id="font-size1"> Probando font-size #1 con #id.</p>
+    <p id="font-size2"> Probando font-size #2 con #id.</p>
+    <p title="atributo">Este párrafo tiene un atributo "title".</p>
+    <p title="atributoX">Este párrafo tiene un atributo "title".</p>
+  </div>
+  <hr>
+  <div class="pseudoclase">
+    Comenzamos con los selectores :pseudoclase
+    <h1>Pseudoclases</h1>
+    <input type="text" placeholder="Escribe algo">
+    <div class="container">
+      <div>Primer elemento</div>
+      <div>Segundo elemento</div>
+      <div>Tercer elemento</div>
+      <div>Cuarto elemento</div>
+    </div>
+  </div>
+  <hr>
+  <div class="pseudoelemento">
+    Comenzamos con los selectores ::pseudoelemento
+    <h1>Pseudoelementos</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quam perspiciatis, veniam quidem voluptatum modi mollitia ratione minus inventore veritatis eos? Necessitatibus nemo soluta vitae quidem asperiores ipsa tempore maxime.</p>
+  </div>
+  <div class="Xpseudoelemento-brand">Limoncito</div>
+  <hr>
+  <div class="posicionamiento1">
+    <p>Posición por defecto, static, no se mueve.</p>
+    <div class="box"></div>
+    <div class="box" id="element"></div>
+    <div class="box"></div>
+  </div>
+  <div class="posicionamiento2">
+    <p>Posición relativa, se mueve respecto a su posición original.</p>
+    <div class="box"></div>
+    <div class="box" id="element"></div>
+    <div class="box"></div>
+  </div>
+  <div class="posicionamiento3">
+    <p>Posición absoluta, se mueve respecto a su contenedor padre más cercano del árbol, en este caso es "body", está arriba pintado.</p>
+    <div class="box"></div>
+    <div class="box" id="element"></div>
+    <div class="box"></div>
+  </div>
+  <div class="posicionamiento4">
+    <p>Posición fixed, se mueve respecto a la ventana/viewport, lo vemos scrolleando.</p>
+    <div class="box"></div>
+    <div class="box" id="element"></div>
+    <div class="box"></div>
+  </div>
+  <div class="posicionamiento5">
+    <p>Posición sticky, se mueve respecto a su contenedor más cercano (su padre). Se bloquea en su propio DIV.</p>
+    <div class="box"></div>
+    <div class="box" id="element"></div>
+    <div class="box"></div>
+  </div>
+  <hr>
+  <section>
+    <div class="zindex">
+      <p>Profundidad Z-Index, el 1 y el 3 están por encima del 2</p>
+      <div class="box" id="element1"></div>
+      <div class="box" id="element2"></div>
+      <div class="box" id="element3"></div>
+    </div>
+  </section>
+</body>
+</html>
