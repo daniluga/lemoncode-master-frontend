@@ -1,0 +1,256 @@
+/** 
+  Existe jerarquía en el fichero .css las reglas de CSS
+  se aplican de arriba hacía abajo, si dos reglas afectan al mismo
+  elemento, la regla que se encuentre más abajo en el fichero .css
+  sobreescribirá a la que se encuentre más arriba.
+*/
+
+/**
+  Diferentes tipos de selectores: 
+  - selector
+  - #id
+  - .clase
+  - :pseudoclase
+  - ::pseudoelemento
+  - [atributo]
+*/
+
+body{
+  background-color: lightblue;
+}
+
+p.selectores-basicos{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Solo los h1, h2, h3 y class="other-title" tendrán estas propiedades */
+h1, h2, h3, .other-title{
+  color: red;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif
+}
+
+/* Solo los 'p' con clase 'no-shorthand' tendrán estas propiedades */
+P.no-shorthand {
+  border-width: 3px;
+  border-style: solid;
+  border-color: black;
+}
+
+/* Solo los 'p' con clase 'shorthand' tendrán estas propiedades */
+p.shorthand {
+  border: 3px solid blue;
+}
+
+/* Solo los 'p' con id 'font-size1' tendrán estas propiedades */
+p#font-size1 {
+  font-size: 50px;
+  color: black /* Sobreescribo el color darkgreen del CSS interno*/
+}
+
+/* Solo los 'p' con id 'font-size2' tendrán estas propiedades */
+p#font-size2 {
+  font-size: 120%;
+  margin: 30px;
+}
+
+/* Solo los '[title]' tendrán estas propiedades */
+[title] {
+  color: darkorange;
+  font-size: 140%;
+  background-color: mediumpurple;
+}
+
+/* Solo los '[title=Email]' tendrán estas propiedades */
+/* Antes de pintarse de azul se pinta de naranja, por la jerarquía de CSS */
+[title=atributo] {
+  color: blue;
+}
+
+/* Línea divisoria para cambiar de topic */
+hr {
+  border: 2px solid darkblue
+}
+
+/**
+ Las pseudoclases son palabras clave que se añaden a los selectores para 
+ seleccionarlos según su estado.
+*/
+div[class^=pseudo]{ /*div[class^=pseudo] para que aplique a pseudoelemento y pseudoclase*/
+  color: rgb(92, 4, 143);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  padding: 15px;
+}
+
+input:focus {
+  background-color: lightgreen; /* Color del input si hay focus. */
+  color: blue; /* Color del texto si hay focus. */
+}
+
+input:hover {
+  background-color: orange; /* Color del input si hay hover. */
+  color: red; /* Color del texto si hay hover. */
+}
+
+/** 
+  Dentro de la clase container coge todos los divs que sean hijos de container 
+  cada 2 elementos 
+*/
+.container div:nth-child(2n) {
+  background-color: lightpink;
+}
+
+.container div:last-child {
+  margin-left: 20px;
+}
+
+/**
+  Los pseudoelementos seleccionan elementos según su situación 
+  respecto a otro elemento.
+*/
+
+div.pseudoelemento p::first-letter {
+  color: darkblue;
+  font-size: 200%;
+}
+
+div.pseudoelemento p::selection {
+  color: black;
+  background-color: lightcoral;
+}
+
+/**
+  ::after añade el contenido después del 'p' de la clase pseudoelemento
+  y en este caso cambia el cursor.
+*/
+div.pseudoelemento p::after {
+  content: '...probando ::after';
+  cursor: pointer;
+  color: darkviolet
+}
+
+div.Xpseudoelemento-brand::before {
+  content: '©';
+  color: black;
+  padding-right: 5px;
+}
+
+
+/**
+  Unidades relativas:
+  - em: Unidad de medida relativa al tamaño de la fuente del elemento.
+    - 1em es igual al tamaño de la fuente del elemento.
+    - 2em es igual al doble del tamaño de la fuente del elemento.
+  - rem: Unidad de medida relativa al tamaño de la fuente del elemento raíz.
+    - 1rem es igual al tamaño de la fuente del elemento raíz.
+    - 2rem es igual al doble del tamaño de la fuente del elemento raíz.
+  - %: Porcentaje del tamaño de la fuente del elemento padre.
+  - vw: Porcentaje del ancho de la ventana/viewport.
+  - vh: Porcentaje del alto de la ventana/viewport.
+*/
+
+/**
+  Display -> Comportamiento externo
+  - block: Elemento en bloque, bloquea la línea entera. 
+      -> Por defecto en div, p, section, ...
+  - inline: Elemento en línea, ocupa lo que ocupa su contenido, da igual si 
+      añades medidas. -> Por defecto en span, em, b, ...
+  - inline-block: Elemento en línea con comportamiento de bloque.
+*/
+
+/**
+  Posicionamiento -> Extraer elemento del flujo normal del DOM.
+  - static: Por defecto. -> No se puede mover.
+  - relative: Elemento se mueve respecto a su posición original.
+  - absolute: Elemento se mueve respecto a su contenedor más cercano.
+  - fixed: Elemento se mueve respecto a la ventana/viewport.
+  - sticky: Elemento se mueve respecto a su contenedor más cercano.
+*/
+
+.box{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: lightseagreen;
+  border: 2px solid blue;
+  margin: 10px;
+}
+
+.box#element{
+  background-color: lightsalmon;
+  border: 2px solid red;
+}
+
+.posicionamiento2 .box#element{
+  background-color: lightsalmon;
+  border: 2px solid red;
+  position: relative;
+  top: 20px;
+  left: 50px;
+}
+
+.posicionamiento3 .box#element{
+  background-color: lightsalmon;
+  border: 2px solid red;
+  position: absolute;
+  top: 20px;
+  left: 5px;
+}
+
+.posicionamiento4 .box#element{
+  background-color: lightsalmon;
+  border: 2px solid red;
+  position: fixed;
+  top: 20px;
+  left: 350px;
+}
+
+.posicionamiento5 .box#element{
+  background-color: lightsalmon;
+  border: 2px solid red;
+  position: sticky;
+  bottom: 0px;
+}
+
+/**
+  Contra más z-index tenga un elemento, más "en frente" estará
+*/
+
+section{
+  position: relative;
+}
+
+.zindex .box{
+  width: 100px;
+  height: 100px;
+  background-color: rgb(32, 178, 93);
+  border: 2px solid blue;
+  top: 50px;
+  left: 50px;
+  position: absolute;
+}
+
+#element1{
+  background-color: rgb(178, 32, 171);
+  border: 2px solid blue;
+  z-index: 3;
+  left: 75px;
+}
+
+#element2{
+  background-color: rgb(127, 178, 32);
+  border: 2px solid blue;
+  z-index: 1;
+  left: 150px;
+}
+
+#element3{
+  background-color: rgb(32, 95, 178);
+  border: 2px solid blue;
+  z-index: 2;
+  left: 225px;
+}
