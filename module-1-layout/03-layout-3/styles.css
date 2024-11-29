@@ -1,0 +1,25 @@
+body{
+  background-color: aquamarine;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+  text-align: center;
+  border: 2px solid black;
+}
+
+hr{
+  border: 2px solid black;
+}
+
+section{
+  margin: 10px;
+}
+
+section.overflow{
+  display: inline-block;
+}
+
+section:hover{
+  background-color: lightpink
+}
