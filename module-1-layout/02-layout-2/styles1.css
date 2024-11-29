@@ -1,0 +1,45 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 75px;
+  background-color: cadetblue;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.root{
+  display: flex;
+  flex: 1;
+}
+
+nav {
+  background-color: darkgreen;
+  width: 200px;
+}
+
+main {
+  background-color: chocolate;
+  display: flex;
+  flex: 1;
+  align-items: center; /* Sobre el eje secundario */
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-evenly; /* Sobre el eje principal */
+  align-content: space-evenly; /* Sobre el eje secundario */
+}
+
+img{
+  width: 150px;
+}
