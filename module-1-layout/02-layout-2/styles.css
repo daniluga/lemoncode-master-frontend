@@ -1,0 +1,421 @@
+body{
+  background-color: aquamarine;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+  text-align: center;
+  border: 2px solid black;
+}
+
+hr{
+  border: 2px solid black;
+}
+
+.property{
+  margin: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+section{
+  margin: 10px;
+}
+
+section.overflow{
+  display: inline-block;
+}
+
+section:hover{
+  background-color: lightpink
+}
+
+/* 
+  Overflow: hidden; Esconde el texto que no cabe dentro del contenedor 
+  de 200px x 200px 
+*/
+.small-container-big-text{
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  overflow: hidden; 
+}
+
+/* 
+  Añade barras de scroll para poder ver el texto que no cabe dentro 
+  del contenedor de 200px x 200px 
+*/
+.small-container-big-text-1{
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  overflow: scroll; 
+}
+
+/* 
+  Añade una barra de scroll solamente donde hace falta para poder ver el texto que no cabe dentro 
+  del contenedor de 200px x 200px 
+*/
+.small-container-big-text-2{
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  overflow: auto; 
+}
+
+.foto-text{
+  padding: 10px;
+  border: 2px solid black;
+}
+
+/* 
+  Float left hace que la imagen se coloque a la izquierda y el texto a la derecha
+*/
+.foto-text img{
+  width: 250px;
+  height: 200px;
+  padding: 10px;
+  border: 2px solid orange;
+  float: left;
+}
+
+.foto-text .text{
+  border: 2px solid red;
+  text-align: justify;
+
+}
+
+/* 
+  Clear: both; hace que el contenedor padre se ajuste al tamaño de la imagen y el texto
+*/
+/* .clear-both{
+  clear: both;
+} */
+
+/* 
+  Después del contenido del contenedor clear: both; hace que el contenedor 
+  padre se ajuste al tamaño de la imagen y el texto
+*/
+.foto-text::after{
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/* 
+  Flexbox:
+  display: flex; ocupa todo el ancho de la pantalla.
+  display: inline-flex; ocupa lo necesario que ocupan sus hijos.
+*/
+.flex-container{
+  display: flex;
+  flex-direction: row; /* row por defecto */
+  width: 100vw;
+  height: 100vh;
+}
+
+
+/* 
+  100% del viewport height, si no tuviera más html, sería toda la altura 
+  para el .menu 
+*/
+.menu{
+  background-color: rgb(128, 158, 240);
+  width: 150px;
+  height: 100vh; 
+}
+
+.content{
+  background-color: rgb(240, 128, 128);
+  flex-grow: 1;
+}
+
+[class^="flex-container-"] div{
+  color: white;
+  padding: 5px;
+}
+
+
+[class^="flex-container-"] div:nth-child(1){
+  background-color: black;
+}
+
+[class^="flex-container-"] div:nth-child(2){
+  background-color: darkslateblue;
+}
+
+[class^="flex-container-"] div:nth-child(3){
+  background-color: grey;
+}
+
+.flex-container-row{
+  display: flex;
+  flex-direction: row;
+  border: 2px solid red;
+}
+
+.flex-container-row-reverse{
+  display:flex;
+  flex-direction: row-reverse;
+  border: 2px solid red;
+}
+
+.flex-container-col{
+  display:flex;
+  flex-direction: column;
+  border: 2px solid green;
+}
+
+.flex-container-col-reverse{
+  display:flex;
+  flex-direction: column-reverse;
+  border: 2px solid green;
+}
+
+/* 
+  Ahora los elementos hijos no caben dentro del contenedor y se salen.
+  Wrap: Hace que los elementos hijos se ajusten al tamaño del contenedor padre
+*/
+
+[class^="flex-container-wrap"]{
+  margin: 5px;
+}	
+
+.flex-container-wrap{
+  display:flex;
+  flex-direction: row;
+  border: 5px solid red;
+  width: 150px;
+}
+/*
+  Wrap: Hace que los elementos hijos se ajusten al tamaño del contenedor padre
+  y se ajusten a la siguiente fila si no caben en la misma.
+*/
+.flex-container-wrap1{
+  display:flex;
+  flex-direction: row;
+  border: 5px solid red;
+  width: 200px;
+  flex-wrap: wrap;
+}
+
+/*Shorthand para flex-direction + flex-wrap*/
+.flex-container-wrap1-reverse{
+  display:flex;
+  flex-flow: row wrap-reverse;
+  border: 5px solid red;
+  width: 200px;
+}
+
+.flex-container-gap{
+  display:flex;
+  flex-flow: row wrap-reverse;
+  border: 5px solid red;
+  width: 200px;
+  gap: 10px; /* shorthand para row + column gaps */
+  /* row-gap: 10px;
+  column-gap: 5px; */
+}
+
+.flex-sizes{
+  border: 5px solid darkblue;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 5px;
+
+}
+
+.flex-sizes div{
+  box-sizing: border-box;
+  color: white;
+  padding: 5px;
+  background-color: darkmagenta;
+  border: 2px solid darkblue
+}
+
+/*
+  Justify content puede ser flex-start | flex-end | center | space-between | space-around | space-evenly;
+*/
+
+.justify-content{
+  display: flex;
+  border: 3px solid black;
+  height: 100vh;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.justify-content .box{
+  color: white;
+  border: 1px solid black;
+  background-color: darkmagenta;
+  padding: 30px;
+}
+
+.justify-content1{
+  display: flex;
+  border: 3px solid black;
+  height: 100vh;
+  box-sizing: border-box;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.justify-content1 .box{
+  color: white;
+  border: 1px solid black;
+  background-color: grey;
+  padding: 30px;
+}
+
+.justify-content2{
+  display: flex;
+  border: 3px solid black;
+  height: 100vh;
+  box-sizing: border-box;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: baseline;
+  align-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.justify-content2 .box{
+  color: white;
+  border: 1px solid black;
+  background-color: grey;
+  padding: 30px;
+}
+
+#box1 {
+  padding-bottom: 70px;
+}
+
+
+/*
+  Hacia arriba: Propiedades para los "contenedores"
+  Hacia abajo: Propiedades para los "hijos"
+*/
+
+.justify-content3{
+  display: flex;
+  border: 3px solid black;
+  height: 100vh;
+  box-sizing: border-box;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.justify-content3 .box{
+  color: white;
+  border: 1px solid black;
+  background-color: grey;
+  padding: 30px;
+}
+
+.justify-content3 #box1 {
+  padding-bottom: 70px;
+}
+
+.justify-content3 #box2 {
+  align-self: flex-end;
+}
+
+.justify-content4{
+  display: flex;
+  border: 3px solid black;
+  height: 100vh;
+  box-sizing: border-box;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.justify-content4 .box{
+  color: white;
+  border: 1px solid black;
+  background-color: grey;
+  padding: 30px;
+}
+
+.justify-content4 #box1 {
+  padding-bottom: 70px;
+  order:3
+}
+
+.justify-content4 #box2 {
+  order:2
+}
+
+.justify-content4 #box4 {
+  order:-1
+}
+
+.justify-content5{
+  display: flex;
+  flex-direction: row;
+  border: 3px solid black;
+}
+
+.justify-content5 [id^="box"]{
+  padding: 30px;
+  border: 3px solid darkblue;
+}
+
+.justify-content5 #box1{
+  /* flex: 1; */ /* Shorthand de: Ocupa todo el espacio disponible */
+  flex-grow: 2; /* Ocupa todo el espacio disponible */
+}
+
+.justify-content5 #box2  {
+  /* flex: 1; */ /* Shorthand de: Ocupa todo el espacio disponible */
+  flex-grow: 1; /* Ocupa todo el espacio disponible */
+}
+
+/* FLEX-BASIS***********************/
+.flex-basis{
+  display: flex;
+  flex-direction: row;
+  border: 3px solid black;
+}
+
+.flex-basis [id^="box"]{
+  padding: 30px;
+  border: 3px solid darkblue;
+}
+
+.flex-basis #box1{
+  flex-basis: 400px;
+}
+
+.flex-basis #box2{
+  flex-basis: 200px;
+}
+
+/* FLEX-SHRINK***********************/
+.flex-shrink{
+  display: flex;
+  flex-direction: row;
+  border: 3px solid black;
+}
+
+.flex-shrink [id^="box"]{
+  padding: 30px;
+  border: 3px solid darkblue;
+}
+
+.flex-shrink #box1{
+  flex-basis: 400px;
+  flex-shrink: 1;
+}
+
+.flex-shrink #box2{
+  flex-shrink: 4;
+}

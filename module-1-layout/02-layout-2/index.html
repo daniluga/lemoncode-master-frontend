@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Enlazamos fichero para el CSS Externo -->
+</head>
+<body>
+  <h1>🍋 Módulo 1 - Layout - 02 🍋</h1>
+  <section class="overflow">
+    <div class="property">Overflow: hidden</div>
+    <div class="small-container-big-text">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eveniet assumenda consequatur voluptas odit. Harum sunt dolorum perferendis quasi velit tempore eveniet quam quidem, unde adipisci reiciendis quia, aperiam provident?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eveniet assumenda consequatur voluptas odit. Harum sunt dolorum perferendis quasi velit tempore eveniet quam quidem, unde adipisci reiciendis quia, aperiam provident?
+    </div>
+  </section>
+  <section class="overflow">
+    <div class="property">Overflow: scroll</div>
+    <div class="small-container-big-text-1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eveniet assumenda consequatur voluptas odit. Harum sunt dolorum perferendis quasi velit tempore eveniet quam quidem, unde adipisci reiciendis quia, aperiam provident?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eveniet assumenda consequatur voluptas odit. Harum sunt dolorum perferendis quasi velit tempore eveniet quam quidem, unde adipisci reiciendis quia, aperiam provident?
+    </div>
+  </section>
+  <section class="overflow">
+    <div class="property">Overflow: auto</div>
+    <div class="small-container-big-text-2">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eveniet assumenda consequatur voluptas odit. Harum sunt dolorum perferendis quasi velit tempore eveniet quam quidem, unde adipisci reiciendis quia, aperiam provident?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eveniet assumenda consequatur voluptas odit. Harum sunt dolorum perferendis quasi velit tempore eveniet quam quidem, unde adipisci reiciendis quia, aperiam provident?
+    </div>
+  </section>
+  <hr>
+  <section>
+      <div class="property">float: left + clear: both</div>
+      <div class="foto-text">
+        <img
+          src="https://cdn.pixabay.com/photo/2020/04/13/13/27/animal-5038385_960_720.jpg"
+        />
+        <div class="text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu
+          fringilla neque, nec maximus magna. Integer facilisis ex massa, vel
+          iaculis erat finibus in. Nunc sapien justo, fringilla luctus risus
+          rhoncus, mollis aliquam est. Quisque cursus massa non arcu pulvinar
+          ultricies. Morbi eget quam et ante tempor congue. Phasellus ac tortor leo.
+          Suspendisse finibus rhoncus ipsum, at ultrices dui faucibus eget. Nunc
+          mauris lectus, mattis vel ex eget, maximus consectetur orci. Morbi nulla
+          est, pretium quis lobortis in, viverra a arcu. Vivamus vehicula nisl sed
+          quam elementum faucibus. Vestibulum semper tristique lectus. Proin congue
+          diam ut enim sagittis feugiat. Duis ornare tortor vel euismod accumsan.
+          Etiam eu mauris ac nisl iaculis cursus. Sed bibendum elit sit amet
+          suscipit sagittis. Nulla felis risus, auctor ut tellus pellentesque,
+          pellentesque sollicitudin lacus. In dignissim bibendum erat nec
+          pellentesque. Donec a ligula lacinia, laoreet tellus a, sagittis mauris.
+          pretium.
+        </div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div class="property">Haciendo las cosas bien a partir de aquí, con Flexbox</div>
+    <div class="flex-container">
+      <div class="menu">
+        <ul>
+          <li>
+            <a href="https://www.google.com">Google 1</a>
+          </li>
+          <li>
+            <a href="https://www.google.com">Google 2</a>
+          </li>
+        </ul>
+      </div>
+      <div class="content">
+        aa
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div class="property">Jugando con Flexbox (display: flex)</div>
+    <div class="property">flex-direction: row</div>
+    <div class="flex-container-row">
+      <div>
+        <h6>Elemento 1</h6>
+      </div>
+      <div>
+        <h6>Elemento 2</h6>
+      </div>
+      <div>
+        <h6>Elemento 3</h6>
+      </div>
+    </div>
+    <div class="property">flex-direction: row-reverse</div>
+    <div class="flex-container-row-reverse">
+      <div>
+        <h6>Elemento 1</h6>
+      </div>
+      <div>
+        <h6>Elemento 2</h6>
+      </div>
+      <div>
+        <h6>Elemento 3</h6>
+      </div>
+    </div>
+    <div class="property">flex-direction: column</div>
+    <div class="flex-container-col">
+      <div>
+        <h6>Elemento 1</h6>
+      </div>
+      <div>
+        <h6>Elemento 2</h6>
+      </div>
+      <div>
+        <h6>Elemento 3</h6>
+      </div>
+    </div>
+    <div class="property">flex-direction: column-reverse</div>
+    <div class="flex-container-col-reverse">
+      <div>
+        <h6>Elemento 1</h6>
+      </div>
+      <div>
+        <h6>Elemento 2</h6>
+      </div>
+      <div>
+        <h6>Elemento 3</h6>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="property">flex-wrap: wrap</div>
+    <div>Permite saltar de linea cuando los items son mas grandes que contenedor</div>
+    <div class="flex-container-wrap">
+      <div>
+        <h6>Elemento 1</h6>
+      </div>
+      <div>
+        <h6>Elemento 2</h6>
+      </div>
+      <div>
+        <h6>Elemento 3</h6>
+      </div>
+    </div>
+    <div class="flex-container-wrap1">
+      <div>
+        <h6>Elemento 1</h6>
+      </div>
+      <div>
+        <h6>Elemento 2</h6>
+      </div>
+      <div>
+        <h6>Elemento 3</h6>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="property">flex-wrap: wrap-reverse</div>
+    <div class="flex-container-wrap1-reverse">
+      <div>
+        <h6>Elemento 1</h6>
+      </div>
+      <div>
+        <h6>Elemento 2</h6>
+      </div>
+      <div>
+        <h6>Elemento 3</h6>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="property">flex gap (separación entre elementos)</div>
+    <div class="flex-container-gap">
+      <div>
+        <h6>Elemento 1</h6>
+      </div>
+      <div>
+        <h6>Elemento 2</h6>
+      </div>
+      <div>
+        <h6>Elemento 3</h6>
+      </div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div class="property">Diferentes tamaños</div>
+    <div class="flex-sizes">
+      <div>Some text: 123</div>
+      <div>Some text: 123456</div>
+      <div>Some text: 1236546546</div>
+      <div>Some text: 12365465465465</div>
+      <div>Some text: 123</div>
+      <div>Some text: 1234645654</div>
+      <div>Some text: 12</div>
+      <div>Some text: 123</div>
+      <div>Some text: 123</div>
+      <div>Some text: 123645065406540650</div>
+    </div>
+  </section>
+  <hr>
+    <div class="property" >Alineación de elementos: justify content y align content (sirve con muchas lineas) y align items (dentro del mismo eje)</div>
+    <ul>
+      <li>
+        <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-flexbox-properties" target="_blank">Guía visual</a>
+      </li>
+      <li>
+        <a href="https://www.flexbox.fun/">Playground</a>
+      </li>
+      <li>
+        <div>justify-content actuará sobre el eje principal (establecido por flex-direction)</div>
+      </li>
+      <li>
+        <div>align-items actuará sobre el opuesto del eje principal (opuesto de flex-direction)</div>
+      </li>
+      <li>
+        <div>align-content es un algin-items pero para un conjunto de líneas</div>
+      </li>
+    </ul>
+  <section>
+    <div>Ejemplo con flex-direction: column y justify-content: space-evenly:</div>
+    <div class="justify-content">
+      <div class="box">BOX 1</div>
+      <div class="box">BOX 2</div>
+      <div class="box">BOX 3</div>
+    </div>
+  </section>
+  <section>
+    <div>Ejemplo con flex-direction: row y justify-content: space-evenly y align-items: center:</div>
+    <div class="justify-content1">
+      <div class="box">BOX 1</div>
+      <div class="box">BOX 2</div>
+      <div class="box">BOX 3</div>
+    </div>
+  </section>
+  <section>
+    <div> Ejemplo tocho</div>
+    <ul>
+      <li>
+        flex-direction: row
+      </li>
+      <li>
+        align-items: baseline Esto alinea el contenido (texto a nivel de columna en este caso);
+      </li>
+      <li>
+        justify-content: space-evenly;
+      </li>
+      <li>
+        align-content: flex-end;
+      </li>
+    </ul>
+    <div class="justify-content2">
+      <div class="box" id="box1"><h6>BOX 1</h6></div>
+      <div class="box" id="box2"><h6>BOX 2</h6></div>
+      <div class="box" id="box3">BOX 3</div>
+      <div class="box" id="box4">BOX 4</div>
+    </div>
+    </div>
+  </section>
+   <hr>
+   <section>
+    <div class="property">Alinear elementos (align-self)</div>
+    <div class="justify-content3">
+      <div class="box" id="box1"><h6>BOX 1</h6></div>
+      <div class="box" id="box2"><h6>BOX 2</h6></div>
+      <div class="box" id="box3">BOX 3</div>
+      <div class="box" id="box4">BOX 4</div>
+    </div>
+   </section>
+   <hr>
+   <section>
+    <div class="property">Ordenar elementos</div>
+    <div>order: es igual a 0 siempre</div>
+    <ul>
+      <li>
+        <div>Antes de aplicar CSS: | Box1 (0) | Box2 (0) | Box3 (0) |Box4 (0) |</div>
+      </li>
+      <li>
+        <div>Después de asignar order:| Box1 (3) | Box2 (2) | Box3 (0) |Box4 (-1) |</div>
+      </li>
+    </ul>
+    <div class="justify-content4">
+      <div class="box" id="box1"><h6>BOX 1</h6></div>
+      <div class="box" id="box2"><h6>BOX 2</h6></div>
+      <div class="box" id="box3">BOX 3</div>
+      <div class="box" id="box4">BOX 4</div>
+    </div>
+   </section>
+   <hr>
+   <section>
+    <div class="property">flex-grow</div>
+    <div>Permitirá ocupar todo el espacio disponible, de forma responsive.</div>
+    <ul>
+      <li>
+        Contra mayor sea el valor de flex-grow, más espacio ocupará respecto el resto de elementos afectados por flex-grow.
+      </li>
+      <li>
+        Box 1 -> flex-grow: 2
+      </li>
+      <li>
+        Box 2 -> flex-grow: 1
+      </li>
+    </ul>
+    <div class="justify-content5">
+      <div class="box" id="box1">BOX 1</div>
+      <div class="box" id="box2">BOX 2</div>
+      <div class="box" id="box3">BOX 3</div>
+    </div>
+   </section>
+   <hr>
+   <section>
+    <div class="property">flex-basis</div>
+    <div>Asigna prioridad al elemento para crecer primero hasta llegar al tamaño acordado.</div>
+    <ul>
+      <li>
+        Box 1 -> flex-basis: 2
+      </li>
+      <li>
+        Box 2 -> flex-basis: 1
+      </li>
+    </ul>
+    <div class="flex-basis">
+      <div class="box" id="box1">BOX 1</div>
+      <div class="box" id="box2">BOX 2</div>
+      <div class="box" id="box3">BOX 3</div>
+    </div>
+   </section>
+   <hr>
+   <section>
+    <div class="property">flex-shrink</div>
+    <div>.</div>
+    <ul>
+      <li>
+        Box 1 -> flex-shrink: 1 (permite al item encogerse, valor por defecto)
+      </li>
+      <li>
+        Box 2 -> flex-shrink: 4 (encoje x4 más rápido que el resto)
+      </li>
+    </ul>
+    <div class="flex-shrink">
+      <div class="box" id="box1">BOX 1</div>
+      <div class="box" id="box2">BOX 2</div>
+      <div class="box" id="box3">BOX 3</div>
+    </div>
+   </section>
+</body>
+</html>
