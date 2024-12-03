@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles1.css"> <!-- Enlazamos fichero para el CSS Externo -->
+</head>
+<body>
+  <div>
+    Cuando llega a 1fr, crea una nueva columna y el tamaño es como minimo 160px.
+  </div>
+  <ul>
+    <li>
+      minmax: Sirve para definir un valor dentro de un rango.
+    </li>
+    <li>
+      auto-fill: crea nuevas celdas de minimo tamaño vacios cuando tiene espacio libre.
+    </li>
+    <li>
+      auto-fit: reparte el espacio libre entre los elementos existentes.
+    </li>
+    <li>
+      Para ver las diferencia entre auto-fill y auto-fit, dejamos solo 3 elementos y aumentamos el tamaño del contenedor:
+
+con auto-fill: se crean los huecos de 160px aunque no tenga elemento.
+con auto-fit: los 3 elementos crecen porque no hay mas elementos.
+    </li>
+  </ul>
+  <div class="root">
+      <img src="./landscapes/l1.jpg">
+      <img src="./landscapes/l2.jpg">
+      <img src="./landscapes/l3.jpg">
+      <img src="./landscapes/l4.jpg">
+      <img src="./landscapes/l5.jpg">
+      <img src="./landscapes/l6.jpg">
+      <img src="./landscapes/l7.jpg">
+      <img src="./landscapes/l8.jpg">
+  </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+body{
+  background-color: aquamarine;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+  text-align: center;
+  border: 2px solid black;
+}
+
+hr{
+  border: 2px solid black;
+}
+
+section{
+  margin: 10px;
+}
+
+section:hover{
+  background-color: lightpink
+}
+
+.root {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+  border: red 2px solid;
+  gap: 10px 30px;
+  justify-content: space-around;
+}
+
+.root img {
+  width: 100%
+}

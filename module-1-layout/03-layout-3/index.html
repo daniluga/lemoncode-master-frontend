@@ -9,8 +9,334 @@
 <body>
   <h1>🍋 Módulo 1 - Layout - 03 🍋</h1>
   <section>
-    <div>hola</div>
+    <div>display: grid -> Una columna de 6 filas (matriz).</div>
+    <div class="grid-container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </section>
+    <hr>
+  <section>
+    <div>grid-template-columns y grid-template-rows | 3 columnas y 2 filas.</div>
+    <div class="grid-container1">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </section>
+    <hr>
+  <section>
+    <div>grid-template-columns y grid-template-rows | 2 columnas y 3 filas.</div>
+    <div class="grid-container2">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
   </section>
   <hr>
+  <section>
+    <div>Porcentajes</div>
+    <div class="grid-container3">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+      <div class="item">11</div>
+      <div class="item">12</div>
+      <div class="item">13</div>
+      <div class="item">14</div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div>Fracciones (Xfr), exclusivo de CSS Grid.: Ocupan el espacio restante disponible</div>
+    <ul>
+      <li>
+        1fr = 1 parte de la fracción disponible
+      </li>
+      <li>
+        2fr = 2 partes de la fracción disponible
+      </li>
+      <li>
+        etc...
+      </li>
+    </ul>
+    <div class="grid-container4">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div>auto</div>
+    <ul>
+      <li>auto solo coge el tamaño mínimo necesario para representar el objeto de dentro</li>
+      <li>Xfr usa la fracción del tamaño disponible</li>
+    </ul>
+    <div class="grid-container5">
+      <div class="item">Test</div>
+      <div class="item">Del auto</div>
+      <div class="item">Sobre como funka</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div>posicionamiento de items</div>
+    <ul>
+      <li>
+        Podemos jugar con las posiciones de los items usando grid-column-start, grid-column-end, grid-row-start, grid-row-end
+      </li>
+      <li>
+        En función de lo que hagamos, el grid moverá/adaptará los diferentes items
+      </li>
+      <li>
+        Ejemplo: El nº 1 empieza en la columna 1 y acaba en la 3, y en la fila 1 y acaba en la 2
+      </li>
+    </ul>
+    <div class="grid-container6">
+      <div class="item" id="item-1">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div>inline-grid</div>
+    <ul>
+      <li>
+        Grid llega hasta el final del ancho de la ventana, pero los elementos ocupan menos espacio. ¿por qué? Porque le hemos pedido al grid que coja todo el ancho disponible pero sus elementos necesitan menos espacio para ser mostrados, esto puede ser genial si queremos centar/justificar los elementos
+      </li>
+    </ul>
+    <div class="grid-container7">
+      <div class="item" id="item-1">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+    <ul>
+      <li>
+        Qué pasaría si cambiamos el estilo del grid a inline? Ahora el grid solo ocupa exactamente el ancho solicitado por los elementos mostrados.
+      </li>
+    </ul>
+    <div class="grid-container8">
+      <div class="item" id="item-1">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div>grid-auto-flow</div>
+    <ul>
+      <li>
+        Controlamos el flow de los elementos con esta propiedad.
+      </li>
+      <li>
+        Actualmente está preparado para 2 filas y 3 columnas, pero le metimos el nº 7, ¿qué pasará?
+      </li>
+      <li>
+        En este caso, grid-auto-flow está en row, y le asigna un tamaño "auto", por eso tiene el mismo largo que el resto pero un alto mínimo para ser representado.
+      </li>
+    </ul>
+    <div class="grid-container9">
+      <div class="item" id="item-1">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+    </div>
+    <ul>
+      <li>
+        En este caso, grid-auto-flow está en columna, y le asigna un tamaño "auto", por eso tiene el mismo alto que el resto pero un largo hasta el fin del contenedor.
+      </li>
+    </ul>
+    <div class="grid-container10">
+      <div class="item" id="item-1">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div>grid-auto-flow</div>
+    <ul>
+      <li>
+        Como se están creando con "auto", podemos evitar eso usando grid-auto-rows: "valor"
+      </li>
+      <li>
+        En este caso, grid-auto-rows: 100px, le asigna un tamaño fijo a cada elemento creado automáticamente.
+      </li>
+      <li>
+        Gracias a esto, podemos prescindir de grid-template-rows: repeat(2, 150px);.
+      </li>
+    </ul>
+    <div class="grid-container11">
+      <div class="item" id="item-1">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">7</div>
+      <div class="item">7</div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div>grid-areas</div>
+    <ul>
+      <li>
+        Se ve muy bien, incluso podemos cambiar el tamaño de la ventana y podemos ver cómo el área de contenido del menú principal el área de contenido del menú principal se adapta, pero el código resultante no parece muy intuitivo... y puede ser poco mantenible (suponer que se mete una columna mas)
+      </li>
+    </ul>
+    <div class="grid-areas">
+      <header>Header</header>
+      <nav>Nav</nav>
+      <main>Main</main>
+      <footer>Footer</footer>
+    </div>
+    <ul>
+      <li>
+        Ahora con grid-areas: mucho más simple
+      </li>
+    </ul>
+    <div class="grid-areas1">
+      <header>Header</header>
+      <nav>Nav</nav>
+      <main>Main</main>
+      <footer>Footer</footer>
+      <p>Test de ubicacion. Lo pone aquí pq está vacío</p>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div>grid-gap</div>
+    <div class="grid-gap">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </section>
+  <hr>
+  <section>
+    <div>justify-items</div>
+  </div>
+  <ul>
+    <li>
+      A diferencia con flexbox, en grid siempre se alinea con el eje horizontalmente
+    </li>
+  </ul>
+    <div class="grid1">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+    <div>align-self</div>
+    <ul>
+      <li>
+        Nº2, align-self: flex-end
+      </li>
+    </ul>
+    <div class="grid2">
+      <div class="item">1</div>
+      <div class="item" id="id">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+    <div>shorthand "place-items" para align-items y justify-content</div>
+    <ul>
+      <li>
+        place-items: "align-items" "justify-items" | place-items: center end 
+      </li>
+    </ul>
+    <div class="grid3">
+      <div class="item">1</div>
+      <div class="item" id="id">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+    <div>justify-content</div>
+    <ul>
+      <li>
+        Mueve el el grid entero en el eje horizontal.
+      </li>
+      <li>
+        En este ejemplo, como el grid ocupa todo el ancho, hay que reducir su tamaño, por eso el ya no usaremos fr.
+      </li>
+    </ul>
+    <div class="grid4">
+      <div class="item">1</div>
+      <div class="item" id="id">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+    <div>align-content</div>
+    <ul>
+      <li>
+        Mueve el el grid entero en el eje vertical.
+      </li>
+      <li>
+        shorthand "place-content" para align-content y justify-content -> place-content: end center
+      </li>
+    </ul>
+    <div class="grid5">
+      <div class="item">1</div>
+      <div class="item" id="id">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+    </div>
+  </section>
 </body>
 </html>
