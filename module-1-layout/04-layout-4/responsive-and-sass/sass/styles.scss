@@ -1,0 +1,173 @@
+@use "base.scss";
+
+div.container {
+  padding: 15px;
+  border: 1px solid black;
+
+ p {
+   font-size: 125%;
+ }
+
+ /* El & hace referencia al padre, en este caso es "div.container". */
+ /* El > hace referencia al 1er hijo directo "p" del padre */
+ & > p {
+   font-style: italic;
+   font-weight: bold;
+   color: darkblue
+ }
+
+ p:hover {
+   background-color: pink;
+ }
+}
+
+
+p {
+  /* 
+    Con el operador & vamos a indicar que debe 
+    dirigirse al párrafo padre.
+
+    ".variables-a &" equivale a ".variables-a p"
+  */
+  .variables-a & {
+  font-size: base.$font-base-size * 1.2; /* Ej: Operaciones */
+  background-color: base.$primary-color;
+  color: base.$text-color;
+}
+ .variables-b & {
+   background-color: base.$secondary-color;
+   color: base.$text-color;
+ }
+}
+
+a {
+  font: {
+    size: base.$link-font-size;
+    weight: bold;
+  }
+  
+  &:hover {
+    color: base.$primary-color;
+  }
+}
+
+@media screen and (max-width: base.$breakpoint-sm) {
+  p {
+    font-size: 30px;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(2, 200px);
+
+  .item:nth-child(1) {
+    background-color: lighten($color: base.$grid-item-base-color, $amount: 50%);
+  }
+
+  .item:nth-child(2) {
+    background-color: darken($color: base.$grid-item-base-color, $amount: 50%);
+  }
+
+  .item:nth-child(3) {
+    background-color: saturate($color: base.$grid-item-base-color, $amount: 50%);
+  }
+
+  .item:nth-child(4) {
+    background-color: desaturate($color: base.$grid-item-base-color, $amount: 50%);
+  }
+
+  .item:nth-child(5) {
+    background-color: fade-in($color: base.$grid-item-base-color, $amount: 0.5);
+  }
+
+  .item:nth-child(6) {
+    background-color: fade-out($color: base.$grid-item-base-color, $amount: 0.5);
+  }
+
+  .item:nth-child(7) {
+    background-color: invert($color: base.$grid-item-base-color);
+  }
+
+  .item:nth-child(8) {
+    background-color: complement($color: base.$grid-item-base-color);
+  }
+}
+
+/*
+  Mixin es una forma de reutilizar estilos como si fueran "funciones".
+*/
+
+@mixin shadow-effect($shadow: 5px) {
+  box-shadow: 6px 10px $shadow rgba(0, 0, 0, 0.69);
+ 
+  &:hover {
+   box-shadow: 3px 5px $shadow rgba(0, 0, 0, 0.69);
+ }
+}
+
+/*
+  Extend es una forma de reutilizar estilos.
+*/
+
+.button {
+  padding: 1rem;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  display: inline-block;
+}
+
+.primary-button {
+  @extend .button;
+  background-color: base.$primary-color;
+  @include shadow-effect(10px);
+}
+
+/*
+  Funciones
+*/
+@function filter-image($amount) {
+  @return brightness($amount * 2) sepia($amount);
+}
+
+.images-container-1 {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
+
+  /*
+    Aplicarle un brillo dependiendo de la posicion que ocupe la imagen
+  */
+
+  img:hover {
+    filter: filter-image(0.6)
+  }
+}
+
+.images-container-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
+
+  img {
+    width: 200px;
+    height: 200px;
+  }
+
+  /*
+    Aplicarle un brillo dependiendo de la posicion que ocupe la imagen
+  */
+  $i: 1;
+  @while $i <= 9 {
+    .item-#{$i}:hover {
+      filter: filter-image(0.6 * $i);
+    }
+    $i: $i + 1;
+  }
+}
