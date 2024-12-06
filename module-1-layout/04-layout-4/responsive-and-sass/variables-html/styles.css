@@ -1,0 +1,26 @@
+html {
+  --primary-color: darkorange
+}
+
+header{
+  background-color: var(--primary-color);
+  padding: 25px;
+}
+
+main{
+  color: var(--primary-color);
+  font-size: 125%;
+  margin: 25px
+}
+
+.card{
+  --primary-color: darkgreen;
+  border: 2px solid var(--primary-color);
+  padding: 15px;
+  border-radius: 8px;
+}
+.card1{
+  border: 2px solid var(--primary-color);
+  padding: 15px;
+  border-radius: 8px;
+}

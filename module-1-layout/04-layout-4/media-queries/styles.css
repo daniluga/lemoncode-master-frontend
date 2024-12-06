@@ -1,0 +1,56 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 150px;
+  background-color: indianred;
+  padding: 25px;
+  font-size: 150%;
+}
+
+.grid-container {
+  display: grid;
+  background-color: darkslategrey;
+  gap: 1rem;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  flex-grow: 1;
+}
+
+.item {
+  background-color: khaki;
+  padding: 25px;
+}
+
+/*
+  Ok, ahora si el usuario va a navegar por nuestra aplicación en un dispositivo de tableta queremos tener suficiente espacio para mostrar el contenido, pero no hacer scroll horizontal, así que en lugar de tener 3 columnas, vamos a mostrar sólo 2, ¿cómo puedo hacer esto? Media queries al rescate:
+  Es hora de empezar por mobile first.
+  Vamos a añaidr una media query que se aplicará para resoluciones inferiores a 650px.
+*/
+
+@media screen and (width <= 450px) {
+  .grid-container {
+     grid-template-columns: 1fr;
+     grid-auto-rows: 1fr;
+   }
+
+   header {
+     display: none;
+   }
+}
+
+@media screen and (width > 451px) and (width < 650px) {
+  .grid-container {
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+    background-color: lightblue;
+  }
+  header {
+    height: initial;
+  }
+}
+
