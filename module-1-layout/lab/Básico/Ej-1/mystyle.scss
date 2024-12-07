@@ -1,0 +1,68 @@
+@use "_base.scss" as base;
+@use "sass:color" as color;
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+@function adjustDarkness($color, $amount) {
+  @return color.scale($color, $lightness: -$amount);
+}
+
+@function adjustLightness($color, $amount) {
+  @return color.scale($color, $lightness: $amount);
+}
+
+@mixin colorPalette($color){
+  display: grid;
+  grid-auto-flow: column;
+  margin: base.$gridMargin;
+  grid-gap: base.$gridGap;
+
+  .box span {
+    color: base.$text-color;
+  }
+
+  .base-color {
+    background-color: $color;
+  }
+
+  @for $i from 1 through base.$colorAdjustmentLevels {
+    .darken-#{$i}{
+      background-color: adjustDarkness($color, (base.$percentage * $i));
+      
+      & .color-box-text {
+        color: adjustDarkness(base.$text-color, (base.$percentage *$i));
+      }
+    }
+
+    .lighten-#{$i}{
+      background-color: adjustLightness($color, (base.$percentage * $i));
+      
+      & .color-box-text {
+        color: adjustLightness(base.$text-color, (base.$percentage *$i));
+      }
+    }
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: base.$borderRadius;
+    height: base.$boxHeight;
+  }
+}
+
+div.container-1{
+  @include colorPalette(base.$first-color);
+}
+div.container-2{
+  @include colorPalette(base.$second-color);
+}
+div.container-3{
+  @include colorPalette(base.$third-color);
+}
