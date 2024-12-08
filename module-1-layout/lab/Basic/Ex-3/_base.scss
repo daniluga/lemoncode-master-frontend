@@ -1,16 +1,7 @@
 // Colors
-$colors: (
-    base: red,
-    important: darkred,
-    warning: pink,
-);
+$fontColor: white;
+$navBarColor: teal;
+$navBarHoverColor: rgb(0, 88, 88);
 
 // Values
-$borderRadius: 0px;
-
-// Fonts
-$principalFont: Courier, monospace;
-$secondaryFont: Times, serif;
-
-// Shadow
-$horizontalShadow: -6px;
+$screenSize: 500px;

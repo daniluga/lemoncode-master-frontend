@@ -2,7 +2,48 @@
 
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   width: 100vw;
 }
+
+@mixin commonProperties() {
+  display: flex;
+  background-color: base.$navBarColor;
+  color: base.$fontColor;
+
+  & .navItem:hover{
+    background-color: base.$navBarHoverColor;
+  }
+}
+
+@media screen and (width <= base.$screenSize) {
+  .navBar {
+    @include commonProperties();
+    flex-direction: column;
+    width: 200px;
+
+    & .navItem {
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+    }
+   }
+}
+
+@media screen and (width > base.$screenSize) {
+  .navBar{
+    @include commonProperties();
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    width: 100vw;
+
+    & .navItem{
+      padding: 10px;
+    }
+  }
+}
+
+// TODO: Para resolución full quitar scroll y adaptarlo al ancho de la pantalla.
