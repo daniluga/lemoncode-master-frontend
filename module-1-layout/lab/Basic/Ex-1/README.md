@@ -15,8 +15,11 @@ Follow these steps to launch the exercise via the terminal:
    ```
 
 3. Start the development server:
+
    ```bash
    npm run dev
    ```
+
+4. Click on the URL labeled as "Local" that appears in the terminal output.
 
 That's it! You're ready to go.
