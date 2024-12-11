@@ -1,0 +1,52 @@
+@use "_base.scss" as base;
+
+@mixin centered-container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+body {
+  font-family: base.$font;
+  margin: base.$bodyMargin;
+  padding: base.$bodyPadding;
+  width: base.$bodyWidth;
+  height: base.$bodyHeight;
+  background-color: base.$backgroundColor;
+  @include centered-container;
+}
+
+.card {
+  display: grid;
+  border: base.$cardBorder;
+  width: base.$cardWidth;
+  background-color: base.$cardColor;
+
+  & img {
+    width: base.$imgWidth;
+  }
+
+  & .card-content{
+    display: grid;
+    margin: base.$oneRem;
+    row-gap: base.$oneRem;
+    
+    & .published-date{
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: end;
+      gap: base.$dateGap;
+
+      & .date{
+        color: base.$dateAndButtonColor;
+      }
+    }
+
+    & .more-info {
+      background-color: base.$dateAndButtonColor;
+      color: base.$cardColor;
+      padding: base.$oneRem;
+      @include centered-container;
+    }
+  }
+}
