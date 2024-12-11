@@ -1,7 +1,19 @@
-// Colors
+/**********   COLORS   **********/
+
 $fontColor: white;
 $navBarColor: teal;
 $navBarHoverColor: rgb(0, 88, 88);
 
-// Values
+/**********   FONTS   **********/
+
+$bodyFont: Arial, sans-serif;
+
+/**********   VALUES   **********/
+
+$bodyMargin: 0px;
+$bodyPadding: 0px;
+$bodyWidth: 100vw;
 $screenSize: 500px;
+$paddingBigMode: 10px;
+$paddingSmallMode: 15px;
+$heightBigMode: 40px;

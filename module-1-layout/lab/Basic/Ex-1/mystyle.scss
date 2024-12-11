@@ -2,10 +2,10 @@
 @use "sass:color" as color;
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  width: 100vw;
+  font-family: base.$bodyFont;
+  margin: base.$bodyMargin;
+  padding: base.$bodyPadding;
+  width: base.$bodyWidth;
 }
 
 @function adjustDarkness($color, $amount) {
@@ -52,7 +52,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: base.$borderRadius;
+    border-radius: base.$boxBorderRadius;
     height: base.$boxHeight;
   }
 }

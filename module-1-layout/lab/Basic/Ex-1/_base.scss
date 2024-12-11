@@ -1,13 +1,23 @@
-// Colors
+/**********   COLORS   **********/
+
 $first-color: #e74c3c;
 $second-color: #3498db;
 $third-color:  #2ecc71;
 $text-color: purple;
 
-// Values
+/**********   FONTS   **********/
+
+$bodyFont: Arial, sans-serif;
+
+/**********   VALUES   **********/
+
+$bodyMargin: 0px;
+$bodyPadding: 0px;
+$bodyWidth: 100vw;
+
 $percentage: 10%;
 $colorAdjustmentLevels:4;
-$borderRadius: 8px;
+$boxBorderRadius: 8px;
 $boxHeight: 100px;
 $gridMargin: 10px;
 $gridGap: 10px;

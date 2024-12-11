@@ -1,49 +1,40 @@
 @use "_base.scss" as base;
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0px;
-  padding: 0px;
-  width: 100vw;
+  font-family: base.$bodyFont;
+  margin: base.$bodyMargin;
+  padding: base.$bodyPadding;
+  width: base.$bodyWidth;
 }
-
-@mixin commonProperties() {
+ 
+@mixin navBarProperties($flexDirection, $padding, $justifyContent: space-between, $alignItems: center, $height: auto) {
   display: flex;
   background-color: base.$navBarColor;
   color: base.$fontColor;
+  flex-direction: $flexDirection;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  height: $height;
 
-  & .navItem:hover{
+  & .navItem {
+    padding: $padding;
+    display: flex;
+    justify-content: center;
+  }
+
+  & .navItem:hover {
     background-color: base.$navBarHoverColor;
   }
 }
 
 @media screen and (width <= base.$screenSize) {
   .navBar {
-    @include commonProperties();
-    flex-direction: column;
-    width: 200px;
-
-    & .navItem {
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-    }
-   }
-}
-
-@media screen and (width > base.$screenSize) {
-  .navBar{
-    @include commonProperties();
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 40px;
-    width: 100vw;
-
-    & .navItem{
-      padding: 10px;
-    }
+    @include navBarProperties(column, base.$paddingSmallMode, center);
   }
 }
 
-// TODO: Para resolución full quitar scroll y adaptarlo al ancho de la pantalla.
+@media screen and (width > base.$screenSize) {
+  .navBar {
+    @include navBarProperties(row, base.$paddingBigMode, space-between, center, base.$heightBigMode);
+  }
+}
