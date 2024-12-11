@@ -2,13 +2,19 @@
 
 Follow these steps to launch the exercise via the terminal:
 
-1. Install dependencies:
+1. Open exercise folder in integrated terminal:
+
+   ```bash
+   cd path/to/exercise
+   ```
+
+2. Install dependencies:
 
    ```bash
    npm install
    ```
 
-2. Start the development server:
+3. Start the development server:
    ```bash
    npm run dev
    ```
@@ -26,12 +32,14 @@ This project allows you to switch between different styles by simply modifying t
 2. Locate the following lines at the beginning of the file:
 
    ```scss
-   @use "_base-red.scss" as base; // Uncommented by default
-   @use "_base-blue.scss" as base; // Commented by default
+   @use "_base.scss" as base;
+   @use "_base-red.scss" as styleBase; // Uncommented by default
+   @use "_base-blue.scss" as styleBase; // Commented by default
    ```
 
 3. To use \_base.blue.scss:
    ```scss
-   // @use '_base-red.scss' as base;
-   @use "_base-blue.scss" as base;
+   @use "_base.scss" as base;
+   // @use '_base-red.scss' as styleBase;
+   @use "_base-blue.scss" as styleBase;
    ```

@@ -1,16 +1,17 @@
-// Colors
+/**********   COLORS   **********/
+
 $colors: (
     base: blue,
     important: darkblue,
     warning: lightblue,
 );
 
-// Values
-$borderRadius: 5px;
+/**********   VALUES   **********/
 
-// Fonts
+$borderRadius: 5px;
+$horizontalShadow: 6px;
+
+/**********   FONTS   **********/
+
 $principalFont: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serifs;
 $secondaryFont: cursive;
-
-// Shadow
-$horizontalShadow: 6px;

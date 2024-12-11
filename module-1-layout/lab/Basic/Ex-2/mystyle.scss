@@ -1,54 +1,55 @@
-@use "_base-red.scss" as base;
-// @use "_base-blue.scss" as base;
+@use "_base.scss" as base;
+@use "_base-red.scss" as styleBase;
+// @use "_base-blue.scss" as styleBase;
 
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  width: 100vw;
+  font-family: base.$bodyFont;
+  margin: base.$bodyMargin;
+  padding: base.$bodyPadding;
+  width: base.$bodyWidth;
 }
 
 div.container-1{
   display: grid;
   grid-auto-flow: row;
-  width: 150px;
-  gap: 5px;
-  padding: 20px;
+  width: base.$containerWidth;
+  gap: base.$containerGap;
+  padding: base.$containerPadding;
 
     & .box{
       display: flex;
-      border: 1px solid black;
       justify-content: start;
-      height: 75px;
-      width: 100px;
-      border-radius: base.$borderRadius;
+      border: base.$boxBorder;
+      height: base.$boxHeight;
+      width: base.$boxWidth;
+      border-radius: styleBase.$borderRadius;
     }
 
     & .color-box-text {
-      padding: 10px;
-      margin: 5px;
+      padding: base.$colorBoxTextPadding;
+      margin: base.$colorBoxTextMargin;
     }
 
     & .text {
-      padding-top: 5px;
-      padding-bottom: 5px;
+      padding-top: base.$textPaddingTop;
+      padding-bottom: base.$textPaddingBottom;
     }
 
     & .primary-text {
-      font-family: base.$principalFont;
+      font-family: styleBase.$principalFont;
     }
 
     & .secondary-text {
-      font-family: base.$secondaryFont;
+      font-family: styleBase.$secondaryFont;
     }
 
     & .withShadow {
-      box-shadow: base.$horizontalShadow 10px 10px rgba(0, 0, 0, 0.69);
+      box-shadow: styleBase.$horizontalShadow base.$verticalShadow base.$blurShadow rgba(0, 0, 0, 0.69);
       align-items: center;
     }
 }
 
-@each $name, $color in base.$colors {
+@each $name, $color in styleBase.$colors {
   .#{$name}{
     background-color: $color;
   }
