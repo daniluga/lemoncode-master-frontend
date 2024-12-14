@@ -1,0 +1,144 @@
+@use "_base.scss" as base;
+@use "_mixins.scss" as mixins;
+
+@media screen and (width <= base.$breakpointSM) {
+  body {
+    @include mixins.body();
+
+    & header {
+      grid-area: header;
+
+      & .toolbar {
+        @include mixins.toolbarWithSmallMode(true);
+      }
+
+      & .page-title {
+        @include mixins.pageTitleWithSmallMode(true);
+      }
+    }
+
+    & .page-container {
+      @include mixins.pageContainerWithSmallMode(true);
+
+      & nav {
+        grid-area: nav;
+        @include mixins.navWithSmallMode(true);
+
+        & .menu-container {
+          @include mixins.menuContainerWithSmallMode(true);
+          & .menu-title {
+            @include mixins.menuTitleWithSmallMode(true);
+          }
+
+          & ul {
+            @include mixins.ulWithSmallMode(true);
+
+            & li {
+              @include mixins.liWithSmallMode(true);
+            }
+
+            & li:hover {
+              @include mixins.liHover();
+            }
+          }
+        }
+      }
+
+      & main {
+        grid-area: main;
+
+        & .list {
+          @include mixins.listWithSmallMode(true);
+
+          & .card {
+            @include mixins.cardWithSmallMode(true);
+
+            & img {
+              @include mixins.img();
+            }
+
+            & .member-name {
+              @include mixins.memberName();
+            }
+          }
+          @include mixins.cardHover();
+        }
+      }
+    }
+
+    & footer {
+      @include mixins.footer();
+    }
+  }
+}
+
+@media screen and (width > base.$breakpointSM) {
+  body {
+    @include mixins.body();
+
+    & header {
+      grid-area: header;
+
+      & .toolbar {
+        @include mixins.toolbarWithSmallMode(false);
+      }
+
+      & .page-title {
+        @include mixins.pageTitleWithSmallMode(false);
+      }
+    }
+
+    & .page-container {
+      @include mixins.pageContainerWithSmallMode(false);
+
+      & nav {
+        @include mixins.navWithSmallMode(false);
+
+        & .menu-container {
+          @include mixins.menuContainerWithSmallMode(false);
+
+          & .menu-title {
+            @include mixins.menuTitleWithSmallMode(false);
+          }
+
+          & ul {
+            @include mixins.ulWithSmallMode(false);
+
+            & li {
+              @include mixins.liWithSmallMode(false);
+            }
+
+            & li:hover {
+              @include mixins.liHover();
+            }
+          }
+        }
+      }
+
+      & main {
+        grid-area: main;
+
+        & .list {
+          @include mixins.listWithSmallMode(false);
+
+          & .card {
+            @include mixins.cardWithSmallMode(false);
+
+            & img {
+              @include mixins.img();
+            }
+
+            & .member-name {
+              @include mixins.memberName();
+            }
+          }
+          @include mixins.cardHover();
+        }
+      }
+    }
+
+    & footer {
+      @include mixins.footer();
+    }
+  }
+}
