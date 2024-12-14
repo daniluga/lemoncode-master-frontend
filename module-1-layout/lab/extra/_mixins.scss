@@ -1,0 +1,246 @@
+@use "_base.scss" as base;
+
+@mixin body(
+  $margin: base.$bodyMargin,
+  $fontFamily: base.$font,
+  $backgroundColor: base.$fourthColor,
+  $height: base.$bodyHeight,
+  $gridRrows: base.$bodyGridRows,
+  $gridCols: base.$bodyGridCols,
+  $gridAreas: (
+    "header" "navmain" "footer",
+  )
+) {
+  margin: $margin;
+  font-family: $fontFamily;
+  background-color: $backgroundColor;
+  height: $height;
+  display: grid;
+  grid-template-rows: $gridRrows;
+  grid-template-columns: $gridCols;
+  grid-template-areas: $gridAreas;
+}
+
+@mixin toolbarWithSmallMode(
+  $smallMode: false,
+  $justify: space-between,
+  $align: center,
+  $padding: base.$padding,
+  $displaySmall: none,
+  $displayLarge: flex
+) {
+  justify-content: $justify;
+  align-items: $align;
+  padding: $padding;
+  display: if($smallMode, $displaySmall, $displayLarge);
+}
+
+@mixin pageTitleWithSmallMode(
+  $smallMode: false,
+  $bgColor: base.$primaryColor,
+  $padding: base.$pageTitlePadding,
+  $textColor: base.$whiteColor,
+  $fontWeight: bold,
+  $fontSizeSmall: base.$fontSizeSmall,
+  $fontSizeDefault: base.$fontSizeBig,
+  $textAlignSmall: center,
+  $textAlignDefault: left
+) {
+  background-color: $bgColor;
+  padding: $padding;
+  color: $textColor;
+  font-weight: $fontWeight;
+  font-size: if($smallMode, $fontSizeSmall, $fontSizeDefault);
+  text-align: if($smallMode, $textAlignSmall, $textAlignDefault);
+}
+
+@mixin pageContainerWithSmallMode(
+  $smallMode: false,
+  $gridTemplateColumnsDefault: base.$gridTemplateColumnsBig,
+  $gridTemplateColumnsSmall: base.$gridTemplateColumnsSmall
+) {
+  display: grid;
+  grid-template-columns: $gridTemplateColumnsDefault;
+  grid-area: navmain;
+  grid-template-areas: "nav main";
+
+  @if $smallMode {
+    grid-template-columns: $gridTemplateColumnsSmall;
+    grid-template-areas:
+      "nav"
+      "main";
+  }
+}
+
+@mixin navWithSmallMode(
+  $smallMode: false,
+  $backgroundColor: base.$secondaryColor
+) {
+  grid-area: nav;
+  background-color: $backgroundColor;
+
+  @if $smallMode {
+    position: sticky;
+    top: base.$defaultStickyTopPx;
+  }
+}
+
+@mixin menuContainerWithSmallMode($smallMode: false) {
+  @if $smallMode == false {
+    position: sticky;
+    top: base.$defaultStickyTopPx;
+  }
+}
+
+@mixin menuTitleWithSmallMode(
+  $smallMode: false,
+  $defaultPadding: base.$padding,
+  $whiteColor: base.$whiteColor
+) {
+  @if $smallMode {
+    display: none;
+  } @else {
+    display: flex;
+    justify-content: center;
+    align-content: start;
+    padding: $defaultPadding;
+    color: $whiteColor;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+@mixin ulWithSmallMode(
+  $smallMode: false,
+  $paddingSmall: base.$ulPaddingSmall,
+  $paddingDefault: base.$ulPaddingBig
+) {
+  list-style: none;
+  box-sizing: border-box;
+  margin: base.$ulMargin;
+
+  @if $smallMode {
+    padding: $paddingSmall;
+    display: flex;
+    justify-content: space-evenly;
+  } @else {
+    padding: $paddingDefault;
+  }
+}
+
+@mixin liWithSmallMode(
+  $smallMode: false,
+  $tertiaryColor: base.$tertiaryColor,
+  $primaryColor: base.$primaryColor,
+  $defaultPadding: base.$padding,
+  $widthSmall: base.$liWidthSmall
+) {
+  background-color: $tertiaryColor;
+  border: 1px solid $primaryColor;
+  padding: $defaultPadding;
+
+  @if $smallMode {
+    width: $widthSmall;
+    text-align: center;
+  }
+}
+
+@mixin liHover(
+  $primaryColor: base.$primaryColor,
+  $whiteColor: base.$whiteColor
+) {
+  background-color: $primaryColor;
+  color: $whiteColor;
+  font-weight: bold;
+}
+
+@mixin listWithSmallMode(
+  $smallMode: false,
+  $gapSmall: base.$listGapSmall,
+  $gapDefault: base.$listGapBig
+) {
+  margin: base.$listMargin;
+  display: flex;
+  flex: 1;
+
+  @if $smallMode {
+    flex-direction: column;
+    align-content: center;
+    gap: $gapSmall;
+  } @else {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    gap: $gapDefault;
+  }
+}
+
+@mixin cardWithSmallMode(
+  $smallMode: false,
+  $backgroundColor: base.$whiteColor,
+  $gap: base.$cardGapBig,
+  $height: base.$cardHeightBig,
+  $borderColor: black,
+  $borderRadius: base.$cardBorderRadiusBig,
+  $widthDefault: base.$cardWidthBig
+) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $backgroundColor;
+  gap: $gap;
+  height: $height;
+
+  @if $smallMode {
+    border: 0px solid $borderColor;
+  } @else {
+    border: 1px solid $borderColor;
+    border-radius: base.$cardBorderRadiusBig;
+    width: $widthDefault;
+    padding: base.$cardPaddingBig;
+  }
+}
+
+@mixin img(
+  $width: base.$imgWidth,
+  $height: base.$imgHeight,
+  $border-radius: base.$imgBorderRadius
+) {
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+}
+
+@mixin memberName($textAlign: center) {
+  text-align: $textAlign;
+}
+
+@mixin cardHover(
+  $evenBackgroundColor: base.$evenTeachersColor,
+  $oddBackgroundColor: base.$oddTeachersColor,
+  $textColor: base.$primaryColor
+) {
+  & .card:nth-child(even):hover {
+    background-color: $evenBackgroundColor;
+    color: $textColor;
+    font-weight: bold;
+  }
+
+  & .card:nth-child(odd):hover {
+    background-color: $oddBackgroundColor;
+    color: $textColor;
+    font-weight: bold;
+  }
+}
+
+@mixin footer(
+  $backgroundColor: base.$primaryColor,
+  $textColor: base.$whiteColor,
+  $padding: base.$padding
+) {
+  grid-area: footer;
+  background-color: $backgroundColor;
+  color: $textColor;
+  padding: $padding;
+}

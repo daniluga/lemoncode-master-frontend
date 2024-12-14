@@ -1,0 +1,63 @@
+/**********   COLORS   **********/
+
+$primaryColor: #1f3a5c;
+$secondaryColor: #4682b4;
+$tertiaryColor: #7db9e8;
+$fourthColor: #a7c7e7;
+$whiteColor: white;
+
+$evenTeachersColor: #bff2a3;
+$oddTeachersColor: #ffe9a9;
+
+/**********   FONTS   **********/
+$font: "Arial", sans-serif;
+
+/**********   VALUES   **********/
+/* global */
+$breakpointSM: 768px;
+$padding: 10px;
+$fontSizeBig: 2rem;
+$fontSizeSmall: 1.5rem;
+
+/* body */
+$bodyMargin: 0;
+$bodyHeight: 100vh;
+$bodyGridRows: auto 1fr auto;
+$bodyGridCols: 1fr;
+
+/* page container */
+$gridTemplateColumnsBig: 200px 1fr;
+$gridTemplateColumnsSmall: 1fr;
+
+/* page title */
+$pageTitlePadding: 20px;
+
+/* img */
+$imgBorderRadius: 50%;
+$imgHeight: 100px;
+$imgWidth: 100px;
+
+/* card */
+$cardGapBig: 10px;
+$cardHeightBig: 175px;
+$cardWidthBig: 200px;
+$defaultCardBorder: 1px solid black;
+$smallCardBorder: 0px solid black;
+$cardBorderRadiusBig: 5px;
+$cardPaddingBig: 10px;
+
+/* ul */
+$ulMargin: 0px;
+$ulPaddingSmall: 5px;
+$ulPaddingBig: 0px;
+
+/* li */
+$liWidthSmall: 5rem;
+
+/* list */
+$listMargin: 20px;
+$listGapSmall: 5px;
+$listGapBig: 15px;
+
+/* position sticky */
+$defaultStickyTopPx: 0px;
