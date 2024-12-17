@@ -1,0 +1,133 @@
+@use "_base.scss" as base;
+@use "_mixins.scss" as mixins;
+
+body {
+  background-color: base.$backgroundColor;
+  color: base.$textColor;
+  font-family: base.$font;
+  margin: base.$bodyMargin;
+  padding: base.$bodyPadding;
+  height: base.$bodyHeight;
+  font-size: base.$fontSizeBase;
+
+  & header {
+    background-color: base.$backgroundColor;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    padding: 25px 0px;
+
+    & .header-logo {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      & .platform-title {
+        font-size: base.$fontSizeTitle;
+        padding-left: 10px;
+
+        @media (width < base.$breakpointDesktop) {
+          display: none;
+        }
+      }
+    }
+
+    & .header-buttons {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+
+      & div {
+        padding: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease,
+          padding 0.3s ease;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: base.$textColor;
+          color: base.$backgroundColor;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  #top-text::after {
+    content: base.$allPopulars;
+    font-weight: bold;
+
+    @media screen and (width < base.$breakpointDesktop) {
+      content: base.$reducedPopulars;
+    }
+  }
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+
+    @media screen and (width < base.$breakpointDesktop) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .top-item {
+    img {
+      width: 100%;
+      min-width: 225px;
+    }
+
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        order: #{5 - $i};
+      }
+    }
+
+    @media screen and (width < base.$breakpointDesktop) {
+      @for $i from 1 through 2 {
+        &:nth-child(#{$i}) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media screen and (width < base.$breakpointMobile) {
+    flex-direction: column;
+  }
+}
+
+.section-title {
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.first,
+.second {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+  .item {
+    display: flex;
+    flex-grow: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-width: 250px;
+    }
+  }
+}
+
+.first img:hover,
+.second img:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.1);
+}

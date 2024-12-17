@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Playwrite+VN+Guides&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/**********   COLORS   **********/
+
+$backgroundColor: #141414;
+$textColor: #f5f5f5;
+
+/**********   FONTS   **********/
+
+$font: "Roboto", sans-serif;
+$fontSizeBase: 1.25rem;
+$fontSizeTitle: 2rem;
+
+/**********   VALUES   **********/
+
+/* breakpoints */
+$breakpointDesktop: 1280px;
+$breakpointTablet: 850px;
+$breakpointMobile: 450px;
+
+$bodyMargin: 0px;
+$bodyPadding: 20px;
+$bodyHeight: 100vh;
+
+/* Most populars */
+$allPopulars: "5";
+$reducedPopulars: "3";
