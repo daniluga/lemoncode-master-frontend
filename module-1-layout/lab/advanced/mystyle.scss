@@ -1,0 +1,121 @@
+@use "_base.scss" as base;
+@use "_mixins.scss" as mixins;
+
+body {
+  background-color: base.$backgroundColor;
+  color: base.$textColor;
+  font-family: base.$font;
+  margin: base.$bodyMargin;
+  padding: base.$bodyPadding;
+  height: base.$bodyHeight;
+  font-size: base.$fontSizeBase;
+
+  & header {
+    background-color: base.$backgroundColor;
+    @include mixins.flexAlignItemCenterRow();
+    justify-content: space-between;
+    position: sticky;
+    top: base.$defaultStickyTopPx;
+    padding: base.$paddingTopBottom;
+
+    & .header-logo {
+      @include mixins.flexAlignItemCenterRow();
+
+      & .platform-title {
+        font-size: base.$fontSizeTitle;
+        padding-left: base.$platformTitlePaddingLeft;
+
+        @media (width < base.$breakpointDesktop) {
+          display: none;
+        }
+      }
+    }
+
+    & .header-buttons {
+      display: flex;
+      flex-direction: row;
+      gap: base.$bigGap;
+
+      & div {
+        padding: base.$basePadding;
+        transition: background-color base.$transitionTime ease,
+          color base.$transitionTime ease, padding base.$transitionTime ease;
+        border-radius: base.$buttonBorderRadius;
+
+        &:hover {
+          background-color: base.$textColor;
+          color: base.$backgroundColor;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  #top-text::after {
+    content: base.$allPopulars;
+    font-weight: bold;
+
+    @media screen and (width < base.$breakpointDesktop) {
+      content: base.$reducedPopulars;
+    }
+  }
+
+  .top {
+    @include mixins.flexJustifyContentCenterRow();
+    gap: base.$baseGap;
+
+    @media screen and (width <= base.$breakpointTabletMobile) {
+      flex-wrap: wrap;
+    }
+  }
+
+  .top-item {
+    img {
+      width: base.$fullWidth;
+      min-width: base.$minWidthTop;
+    }
+
+    @for $i from 1 through base.$topItemsNumber {
+      &:nth-child(#{$i}) {
+        order: #{base.$topItemsNumber - $i};
+      }
+    }
+
+    @media screen and (width < base.$breakpointDesktop) {
+      @for $i from 1 through base.$topItemsToBeRemoved {
+        &:nth-child(#{$i}) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.section-title {
+  padding: base.$sectionPaddingTopBottom;
+}
+
+.first,
+.second {
+  @include mixins.flexJustifyContentCenterRow();
+  flex-wrap: wrap;
+  gap: base.$baseGap;
+
+  .item {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: calc(base.$fullWidth / initialRestItemsPerRow - base.$baseGap);
+
+    img {
+      width: base.$fullWidth;
+      height: auto;
+      min-width: base.$minWidthRest;
+    }
+  }
+}
+
+.first img:hover,
+.second img:hover {
+  transition: transform base.$transitionTime ease;
+  transform: scale(1.1);
+}
