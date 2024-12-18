@@ -15,13 +15,39 @@ $fontSizeTitle: 2rem;
 
 /* breakpoints */
 $breakpointDesktop: 1280px;
-$breakpointTablet: 850px;
-$breakpointMobile: 450px;
+$breakpointTabletMobile: 700px;
 
 $bodyMargin: 0px;
 $bodyPadding: 20px;
 $bodyHeight: 100vh;
 
-/* Most populars */
+/* most populars */
 $allPopulars: "5";
 $reducedPopulars: "3";
+
+/* position sticky */
+$defaultStickyTopPx: 0px;
+
+/* img */
+$fullWidth: 100%;
+$minWidthTop: 225px;
+$minWidthRest: 250px;
+$topItemsNumber: 5;
+$initialRestItemsPerRow: 6;
+$topItemsToBeRemoved: 2;
+
+/* transition */
+$transitionTime: 0.3s;
+
+/* gap */
+$baseGap: 10px;
+$bigGap: 30px;
+
+/* padding */
+$paddingTopBottom: 25px 0px;
+$sectionPaddingTopBottom: 40px 10px;
+$basePadding: 10px;
+$platformTitlePaddingLeft: 10px;
+
+/* header buttons */
+$buttonBorderRadius: 5px;
