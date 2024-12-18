@@ -1,144 +1,190 @@
 @use "_base.scss" as base;
 @use "_mixins.scss" as mixins;
 
-@media screen and (width <= base.$breakpointSM) {
-  body {
-    @include mixins.body();
+body {
+  margin: base.$bodyMargin;
+  font-family: base.$font;
+  background-color: base.$fourthColor;
+  height: base.$bodyHeight;
+  display: grid;
+  grid-template-rows: base.$bodyGridRows;
+  grid-template-columns: base.$bodyGridCols;
+  grid-template-areas: ("header" "navmain" "footer");
 
-    & header {
-      grid-area: header;
+  header {
+    grid-area: header;
 
-      & .toolbar {
-        @include mixins.toolbarWithSmallMode(true);
-      }
+    & .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: base.$padding;
 
-      & .page-title {
-        @include mixins.pageTitleWithSmallMode(true);
-      }
-    }
-
-    & .page-container {
-      @include mixins.pageContainerWithSmallMode(true);
-
-      & nav {
-        grid-area: nav;
-        @include mixins.navWithSmallMode(true);
-
-        & .menu-container {
-          @include mixins.menuContainerWithSmallMode(true);
-          & .menu-title {
-            @include mixins.menuTitleWithSmallMode(true);
-          }
-
-          & ul {
-            @include mixins.ulWithSmallMode(true);
-
-            & li {
-              @include mixins.liWithSmallMode(true);
-            }
-
-            & li:hover {
-              @include mixins.liHover();
-            }
-          }
-        }
-      }
-
-      & main {
-        grid-area: main;
-
-        & .list {
-          @include mixins.listWithSmallMode(true);
-
-          & .card {
-            @include mixins.cardWithSmallMode(true);
-
-            & img {
-              @include mixins.img();
-            }
-
-            & .member-name {
-              @include mixins.memberName();
-            }
-          }
-          @include mixins.cardHover();
-        }
+      @media screen and (width <= base.$breakpointSM) {
+        display: none;
       }
     }
 
-    & footer {
-      @include mixins.footer();
+    & .page-title {
+      background-color: base.$primaryColor;
+      padding: base.$pageTitlePadding;
+      font-size: base.$fontSizeBig;
+      text-align: left;
+
+      @include mixins.colorAndWeightText();
+
+      @media screen and (width <= base.$breakpointSM) {
+        font-size: base.$fontSizeSmall;
+        text-align: center;
+      }
     }
   }
-}
 
-@media screen and (width > base.$breakpointSM) {
-  body {
-    @include mixins.body();
+  .page-container {
+    display: grid;
+    grid-template-columns: base.$gridTemplateColumnsBig;
+    grid-area: navmain;
+    grid-template-areas: "nav main";
 
-    & header {
-      grid-area: header;
-
-      & .toolbar {
-        @include mixins.toolbarWithSmallMode(false);
-      }
-
-      & .page-title {
-        @include mixins.pageTitleWithSmallMode(false);
-      }
+    @media screen and (width <= base.$breakpointSM) {
+      grid-template-columns: base.$gridTemplateColumnsSmall;
+      grid-template-areas:
+        "nav"
+        "main";
     }
 
-    & .page-container {
-      @include mixins.pageContainerWithSmallMode(false);
+    & nav {
+      grid-area: nav;
 
-      & nav {
-        @include mixins.navWithSmallMode(false);
+      background-color: base.$secondaryColor;
 
-        & .menu-container {
-          @include mixins.menuContainerWithSmallMode(false);
+      @media screen and (width <= base.$breakpointSM) {
+        position: sticky;
+        top: base.$defaultStickyTopPx;
+      }
 
-          & .menu-title {
-            @include mixins.menuTitleWithSmallMode(false);
+      & .menu-container {
+        @media screen and (width > base.$breakpointSM) {
+          position: sticky;
+          top: base.$defaultStickyTopPx;
+        }
+
+        & .menu-title {
+          display: flex;
+          justify-content: center;
+          align-content: start;
+          padding: base.$padding;
+          text-transform: uppercase;
+
+          @include mixins.colorAndWeightText();
+
+          @media screen and (width <= base.$breakpointSM) {
+            display: none;
+          }
+        }
+
+        & ul {
+          list-style: none;
+          box-sizing: border-box;
+          margin: base.$ulMargin;
+          padding: base.$ulPaddingBig;
+
+          @media screen and (width <= base.$breakpointSM) {
+            padding: base.$ulPaddingSmall;
+            display: flex;
+            justify-content: space-evenly;
           }
 
-          & ul {
-            @include mixins.ulWithSmallMode(false);
+          & li {
+            background-color: base.$tertiaryColor;
+            border: 1px solid base.$primaryColor;
+            padding: base.$padding;
 
-            & li {
-              @include mixins.liWithSmallMode(false);
+            @media screen and (width <= base.$breakpointSM) {
+              width: base.$liWidthSmall;
+              text-align: center;
             }
 
-            & li:hover {
-              @include mixins.liHover();
+            &:hover {
+              background-color: base.$primaryColor;
+              @include mixins.colorAndWeightText();
             }
           }
         }
       }
+    }
 
-      & main {
-        grid-area: main;
+    & main {
+      grid-area: main;
 
-        & .list {
-          @include mixins.listWithSmallMode(false);
+      & .list {
+        margin: base.$listMargin;
+        display: flex;
+        flex: 1;
 
-          & .card {
-            @include mixins.cardWithSmallMode(false);
+        @media screen and (width <= base.$breakpointSM) {
+          flex-direction: column;
+          align-content: center;
+          gap: base.$listGapSmall;
+        }
 
-            & img {
-              @include mixins.img();
-            }
+        @media screen and (width > base.$breakpointSM) {
+          flex-wrap: wrap;
+          justify-content: space-evenly;
+          align-content: space-evenly;
+          gap: base.$listGapBig;
+        }
 
-            & .member-name {
-              @include mixins.memberName();
-            }
+        & .card {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: base.$whiteColor;
+          gap: base.$cardGapBig;
+          height: base.$cardHeightBig;
+
+          @media screen and (width <= base.$breakpointSM) {
+            border: 0px solid black;
           }
-          @include mixins.cardHover();
+
+          @media screen and (width > base.$breakpointSM) {
+            border: 1px solid black;
+            border-radius: base.$cardBorderRadiusBig;
+            width: base.$cardWidthBig;
+            padding: base.$cardPaddingBig;
+          }
+
+          @include mixins.teachersHover(
+            even,
+            base.$evenTeachersColor,
+            base.$primaryColor
+          );
+
+          @include mixins.teachersHover(
+            odd,
+            base.$oddTeachersColor,
+            base.$primaryColor
+          );
+
+          & img {
+            width: base.$imgWidth;
+            height: base.$imgHeight;
+            border-radius: base.$imgBorderRadius;
+          }
+
+          & .member-name {
+            text-align: center;
+          }
         }
       }
     }
+  }
 
-    & footer {
-      @include mixins.footer();
-    }
+  & footer {
+    grid-area: footer;
+    background-color: base.$primaryColor;
+    color: base.$whiteColor;
+    padding: base.$padding;
   }
 }
