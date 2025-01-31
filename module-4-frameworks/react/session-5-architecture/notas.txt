@@ -1,0 +1,6 @@
+imports así -> lele/lolo son considerados imports de módulos (aka node modules)
+se tienen que hacer así -> ./scenes/hello, con el ./
+
+para evitar '../../../../lele' -> ALIAS -> '@scene/lele'
+mirar tsconfig.json + webpack
+
