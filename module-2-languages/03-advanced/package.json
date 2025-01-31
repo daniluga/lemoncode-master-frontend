@@ -1,7 +1,7 @@
 {
-  "name": "playground-typescript",
+  "name": "playground-javascript",
   "version": "1.0.0",
-  "description": "Master frontend Lemoncode, playground to play with Typescript code snippets",
+  "description": "Master frontend Lemoncode, playground to play with Javascript code snippets, no transpilation",
   "keywords": [
     "lemoncode",
     "master",
@@ -25,18 +25,9 @@
     "url": "git+https://github.com/Lemoncode/master-frontend-lemoncode.git"
   },
   "scripts": {
-    "prestart": "npm run transpile && npm run copy",
-    "start": "concurrently \"npm:transpile -- --watch\" npm:devserver",
-    "copy": "copyfiles --flat src/**/*.{html,css} transpiled",
-    "transpile": "tsc --pretty",
-    "devserver": "browser-sync start -c bs-config.json"
+    "start": "browser-sync start -c bs-config.json"
   },
   "dependencies": {
     "browser-sync": "^3.0.2"
-  },
-  "devDependencies": {
-    "concurrently": "latest",
-    "copyfiles": "^2.x",
-    "typescript": "latest"
   }
 }
