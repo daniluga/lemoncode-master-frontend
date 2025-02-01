@@ -1,0 +1,34 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.root {
+  background-color: lightblue;
+  color: darkblue;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  @include flex-center;
+  align-items: center;
+  height: 200px;
+}
+
+.test {
+  background-color: lightcoral;
+  color: darkred;
+}
+
+.root:hover {
+  background-color: lightgreen;
+  color: darkgreen;
+}
+
+#logo {
+  @include flex-center;
+  height: 500px;
+}
+
+img:hover {
+  transform: scale(1.1);
+}
