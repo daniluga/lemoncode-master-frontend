@@ -1,0 +1,10 @@
+{
+  "name": "cjs.playground",
+  "scripts": {
+    "start:webapp": "npx serve .",
+    "start:nodeapp": "node index.js"
+  },
+  "dependencies": {
+    "my-lib": "file:../../my-lib"
+  }
+}

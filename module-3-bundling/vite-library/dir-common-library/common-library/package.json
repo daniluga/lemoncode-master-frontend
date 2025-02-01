@@ -1,0 +1,42 @@
+{
+  "name": "@lemoncode/common-library",
+  "version": "1.0.0",
+  "description": "Lemoncode common library",
+  "author": "Lemoncode",
+  "license": "MIT",
+  "keywords": [
+    "lemoncode",
+    "common",
+    "library"
+  ],
+  "type": "module",
+  "main": "dist/common-library.umd.cjs",
+  "module": "dist/common-library.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/common-library.umd.cjs",
+      "import": "./dist/common-library.js"
+    },
+    "./style.css": "./dist/common-library.css"
+  },
+  "scripts": {
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "vite-plugin-dts": "^4.5.0"
+  },
+  "peerDependencies": {
+    "react": "19.x",
+    "react-dom": "19.x"
+  }
+}
