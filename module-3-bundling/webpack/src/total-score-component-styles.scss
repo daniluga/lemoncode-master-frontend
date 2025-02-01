@@ -1,0 +1,10 @@
+$bg-color: pink;
+
+.result-background {
+  background-color: $bg-color;
+}
+
+// Global es para modificar clases de otros componentes antes del hash.
+:global(.card-title) {
+  background-color: $bg-color;
+}
