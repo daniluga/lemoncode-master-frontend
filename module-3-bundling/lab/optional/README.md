@@ -19,7 +19,7 @@ Follow these steps to launch the exercise via the terminal:
    3.1. Start the build:
 
    ```bash
-   npm run npm run build:dev
+   npm run build:dev
    ```
 
    3.2. Start webpack with development mode:
