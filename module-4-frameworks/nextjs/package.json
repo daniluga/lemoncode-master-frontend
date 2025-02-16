@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "next dev",
+    "build": "next build",
+    "start:prod": "next start -p 8080"
+  },
+  "dependencies": {
+    "next": "^15.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.1",
+    "@types/react": "19.0.8",
+    "typescript": "5.7.3"
+  }
+}
