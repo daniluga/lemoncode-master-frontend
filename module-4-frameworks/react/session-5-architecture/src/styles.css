@@ -1,3 +1,18 @@
+body{
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#root{
+  flex:1;
+  display: flex;
+  flex-direction: column;
+}
+
 .list-user-list-container {
   display: grid;
   grid-template-columns: 80px 1fr 3fr;
@@ -14,4 +29,30 @@
 
 .list-user-list-container > img {
   width: 80px;
+}
+
+/************************************************************************
+ * Layout
+ ************************************************************************/
+.center-layout {
+ display: flex;
+ flex:1;
+ align-items: center;
+ justify-content: center;
+}
+
+.app-header-layout {
+  color: white;
+  background-color: #007661;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 5px;
+  padding: 15px;
+}
+
+.app-container-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr;
 }

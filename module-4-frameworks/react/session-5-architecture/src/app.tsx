@@ -1,7 +1,17 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { RouterComponent } from "@/core";
+import { LoginScene } from "@/scenes";
+import { AppRouter } from "@/router";
+import { AuthProvider } from "./core/providers";
 
 export const App = () => {
-  return <RouterComponent />;
+  return (
+    /**
+     * Con el AuthProvider, se envuelve el AppRouter para que se pueda
+     * acceder a la información de autenticación (USER) en cualquier parte de la
+     * aplicación.
+     */
+    <AuthProvider Login={<LoginScene />}>
+      <AppRouter />
+    </AuthProvider>
+  );
 };
