@@ -1,0 +1,10 @@
+20:01 termina el pod de login y comienza el de list
+varias preguntas/conversaciones
+a las 20:47 termina de transformar el Detail (q es lo mimso aprox que el list)
+
+
+orden imports
+----------------------
+imports 3ros
+imports alias
+imports más cercanos (./assdasd)
