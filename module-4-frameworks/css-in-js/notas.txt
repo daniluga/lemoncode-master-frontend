@@ -1,0 +1,10 @@
+@emotion/css -> genérica/agnóstica
+
+Sí, en la mayoría de los casos @emotion/react es la mejor opción para React porque:
+
+✅ Se integra mejor con JSX → Puedes usar el prop css directamente sin necesidad de className.
+✅ Soporta interpolaciones dinámicas con props → Permite usar valores reactivos fácilmente.
+✅ Compatible con ThemeProvider → Puedes manejar temas de forma nativa.
+
+
+Mirar const bpValues y encontrar explicación.
