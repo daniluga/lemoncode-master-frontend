@@ -1,0 +1,91 @@
+<!-- <pre>{{ members | json }}</pre> -->
+<h2>Alta</h2>
+<div>
+  <form #addForm="ngForm">
+    <div>
+      <label>Id </label>
+      <!-- 
+      ngModel es una directiva que se utiliza para enlazar propiedades de los 
+      elementos del formulario con propiedades del componente.
+      Se tiene que hacer de esta forma: [(ngModel)] es un enlace bidireccional.
+
+      #abc -> Variable de tempalte, referencia a un elemento del DOM.
+
+      pipes -> funciones transformadoras de datos.
+       -->
+      <input name="id" [(ngModel)]="newMember.id" required #id="ngModel" />
+      <div *ngIf="id.invalid && id.touched">El ID es obligatiorio</div>
+    </div>
+    <div>
+      <label>Name </label>
+      <input
+        name="name"
+        [(ngModel)]="newMember.login"
+        required
+        minlength="6"
+        #name="ngModel"
+      />
+      <div *ngIf="name.invalid && name.touched">
+        <div *ngIf="name.errors!['required']">El nombre es obligatorio</div>
+        <div *ngIf="name.errors!['minlength']">
+          El nombre debe tener
+          {{ name.errors!["minlength"].requiredLength }} caracteres mínimo.
+          Tiene sólamente {{ name.errors!["minlength"].actualLength }}
+        </div>
+      </div>
+    </div>
+    <div>
+      <label>Avatar </label>
+      <input
+        name="avatar"
+        (change)="handleFileInput($event)"
+        type="file"
+        accept="image/*"
+      />
+      <div>
+        <img [src]="newMember.avatar_url" width="50" />
+      </div>
+    </div>
+    <button [disabled]="addForm.invalid" (click)="add()">Añadir</button>
+  </form>
+</div>
+
+<h2>Listado</h2>
+<div>
+  <label>Buscar por nombre: </label>
+  <!-- sin el keyup 0, no hace el filtrado mientras escribes, lo hace mediante 
+   #search y no actualiza el dom, solo se actualiza la lista si algo se pinta 
+   de nuevo, lo que sea 
+   -->
+  <input #search (keyup)="(0)" />
+  <table>
+    <thead>
+      <tr>
+        <th appHighlight="red">Avatar</th>
+        <th appHighlight>Id</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let member of members | searchByLogin : search.value"
+        (click)="select(member)"
+      >
+        <td>
+          <img [src]="member.avatar_url" />
+        </td>
+        <td>
+          <span>{{ member.id }}</span>
+        </td>
+        <td>
+          <span>{{ member.login }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-user-edit
+  [member]="memberSelected"
+  (saveEvent)="save($event)"
+></app-user-edit>
