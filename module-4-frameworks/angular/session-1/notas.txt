@@ -1,0 +1,33 @@
+npx -> ejecutar binarios dentro de npm
+todos los componentes, directivas, etc.. van dentro de /app
+binding -> enlazar propiedad del XXXComponent con atributo html así: [placeholder]="placeholder"
+interpolación de atributo -> poner el atributo entre [ ]
+
+----
+ng generate component<dónde dentro de /app + /nombre_componente> 
+ng g c <dónde dentro de /app + /nombre_componente>
+
+
+
+---------------------
+Observer: 
+- Es el suscriptor que "escucha" los valores emitidos por el Observable.
+
+Observable: 
+- Es la fuente de datos que emite valores con el tiempo
+- No emiten hasta que no hay suscriptor (vagos, lazy)
+
+Piensa en una cinta transportadora en una fábrica:
+
+Observable → Es la cinta transportadora que lleva productos (datos).
+Observer → Es el trabajador que está atento a los productos que pasan por la cinta y los recoge (suscripción).
+🔹 Ejemplo:
+
+Si la cinta envía cajas (datos), el trabajador las recibe y procesa.
+Si la cinta se detiene (complete), el trabajador deja de recibir cajas.
+Si la cinta se daña (error), el trabajador recibe una alerta y deja de trabajar.
+💡 Conclusión:
+
+La cinta (Observable) sigue moviendo productos hasta que se para o falla.
+El trabajador (Observer) solo ve los productos si está mirando (suscrito).
+🚀 Esto es RxJS en Angular!
