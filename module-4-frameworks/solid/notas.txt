@@ -1,0 +1,77 @@
+Patrones de diseño, sesión con pseudocódigo.
+
+Ejemplos aquí: https://github.com/Lemoncode/master-frontend-lemoncode/tree/master/04-frameworks/10-solid
+
+
+Capas
+------------------------------------------
+UI --- BACKEND --- BBDD
+
+
+S.O.L.I.D. (aka over engineering)
+------------------------------------------
+S -> Single Responsability Principle (SRP)
+O -> Open/Closed Principle (OCP)
+L -> Liskov Substitution Principle (LSP)
+I -> Interface Segregation Principle (ISP)
+D -> Dependency Inversion Principle (DIP)
+
+S -> SRP Ver si lo estás violando
+-------------------------------------------
+Darse cuenta de:
+- Si tienes demasiados métodos públicos (quizás hay demasiada lógica)
+- Si estás abarcando más de 1 Capas
+- Es difícil hacer test
+- Hay demasiados imports (trabajo extra)
+- Los campos de la clase son independientes (se puede dividir la clase)
+
+O -> OCP
+-------------------------------------------
+clases/métodos/funciones abiertas a su extensión pero cerradas a su modificación
+
+Darse cuenta de:
+- Si modificamos las clases/métodos/funciones a menudo, es posible que estemos violando el principio
+
+Cómo abordarlo (el ejemplo de Measurable me gustó):
+- Clase/interfaz (mejor interfaz) "padre" y hacer clases que "implementen" de la clase padre para tener variantes.
+  De esta forma, las clases "hijas" usan los "mismos" (adaptados) métodos. Así estás extendiendo
+  la funcionalidad sin hacer update de lo que había de antes
+
+L -> LSP
+-------------------------------------------
+Las clases hijas/que extienden deben poder ser substituidas por la clase padre
+
+Darse cuenta de:
+- La clase hija debe respetar SIEMPRE el "contrato" de la clase padre.
+  AKA no modificar los métodos de la clase padre (ex: añadir parámetros, etc)
+- Postcondiciones: 
+  Que clasePadre.setValue() devuelva el valor absoluto de un número y
+  que claseHija.setValue() devuelva el número tal cual.
+  Esto es que la clase hija es menos restrictiva que la padre y está mal.
+- Precondiciones:
+  Lo mismo que arriba pero que la clase hija sea más restrictiva que la padre.
+
+- La clase Bike modifica de mala forma la clase padre Vehicle y no puede
+  usar la funcion de cambio de marcha porque funcionan diferente.
+
+- Estás usando una interfaz con diferentes tipos de datos, eso no puede ser.
+
+Cómo abordarlo:
+- 
+
+I -> ISP
+-------------------------------------------
+Darse cuenta de:
+- Interfaz "muy tocha" AKA con muchas propiedades/métodos (demasiados)
+
+Cómo abordarlo:
+- Crear mini interfaces separando la lógica de forma coherente
+
+D -> DIP
+-------------------------------------------
+Darse cuenta de:
+- Que se depende de cierta clase/objeto en algún momento y puede 
+  dar problemas al extender las funcionalidades
+
+Cómo abordarlo:
+- Depender de interfaces abstractas, que sirvan para todo  ser flexibles.

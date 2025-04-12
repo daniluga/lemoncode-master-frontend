@@ -1,0 +1,26 @@
+{
+  "name": "lit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf hello-world.{d.ts, d.ts.map, .js, .js.map}",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "wds --watch",
+    "build:watch": "tsc --watch",
+    "serve:prod": "MODE=prod npm run serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lit": "^3.2.1"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.4.6",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.2"
+  }
+}
