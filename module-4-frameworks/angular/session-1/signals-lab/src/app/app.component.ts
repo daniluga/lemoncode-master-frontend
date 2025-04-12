@@ -1,13 +1,21 @@
 import { Component, computed, effect, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Product } from './product';
+import { NormalComponent } from './normal.component';
+import { SignalComponent } from './signal.component';
+import { PersonsComponent } from './persons/persons.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule],
+  imports: [
+    CommonModule,
+    NormalComponent,
+    FormsModule,
+    SignalComponent,
+    PersonsComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -35,4 +43,8 @@ export class AppComponent {
     // this.quantity.set(67); // se lo salta porque signals sabe que va a volver a cambiar a 42, no es estable
     // this.quantity.set(42);
   }
+
+  /**
+   * ************************************************************
+   */
 }
