@@ -1,0 +1,10 @@
+Hacer la app responsive y para poder verla bien e interactuar con ella en 
+dispositivos móviles.
+
+
+Agregar funcionalidades adicionales, como poder editar el contenido de una tarea
+ ya existente (al hacer doble click, se convierte en un input type="text") y 
+ guardar los cambios al pulsar Enter o "perder el foco" (@blur).
+
+
+Agregar una funcionalidad de búsqueda para filtrar las tareas por su contenido.
