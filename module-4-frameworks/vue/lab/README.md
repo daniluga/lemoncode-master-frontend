@@ -1,45 +1,27 @@
-# todolist
+# Launch Exercises
 
-This template should help get you started developing with Vue 3 in Vite.
+Follow these steps to launch the exercise via the terminal:
 
-## Recommended IDE Setup
+1. Open exercise folder in integrated terminal:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+   ```bash
+   cd path/to/exercise
+   ```
 
-## Type Support for `.vue` Imports in TS
+2. Install dependencies:
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+   ```bash
+   npm install
+   ```
 
-## Customize configuration
+3. For development environment:
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+   3.1. Start the application:
 
-## Project Setup
+   ```bash
+   npm run dev
+   ```
 
-```sh
-npm install
-```
+   3.2. Once it starts, check your browser.
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+That's it! You're ready to go.
