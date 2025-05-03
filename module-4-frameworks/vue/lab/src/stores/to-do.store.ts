@@ -28,7 +28,8 @@ export const useToDoStore = defineStore('toDoStore', () => {
     () => allToDos.value.filter((todo) => !todo.isCompleted).length,
   )
 
-  const editToDo = ref<string>()
+  const editToDo = ref<number>(0)
+  const editToDoText = ref<HTMLInputElement>()
 
   const laTocha = computed(() => {
     toDosToBeShown.value.length === 0 ? filteredToDos.value : toDosToBeShown.value
@@ -185,6 +186,7 @@ export const useToDoStore = defineStore('toDoStore', () => {
     selectedFilter,
     laTocha,
     editToDo,
+    editToDoText,
     setFilter,
     loadTodos,
     addTodo: createToDo,
