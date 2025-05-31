@@ -5,6 +5,9 @@ on: pull_request
 jobs:
   ci:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: module-5-testing/lab
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
