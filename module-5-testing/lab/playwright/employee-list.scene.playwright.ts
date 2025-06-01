@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 
-test('2', async ({ page }) => {
+test('should navigate to employees list and add a new employee', async ({
+  page,
+}) => {
   // Arrange
   const data = {
     user: 'admin',
