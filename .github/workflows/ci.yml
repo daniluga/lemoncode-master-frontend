@@ -17,3 +17,9 @@ jobs:
           npm install @rollup/rollup-linux-x64-gnu --save-optional
       - name: Tests
         run: npm test
+      - name: Cypress E2E Tests
+        run: |
+          npm run cypress:run
+      - name: Playwright E2E Tests
+        run: |
+          npm run pw:run

@@ -39,7 +39,10 @@ export const DataComponent: React.FunctionComponent<Props> = ({
       validate={formValidation.validateForm}
     >
       {() => (
-        <Form className={cx(classes.form({ isEditMode }), className)}>
+        <Form
+          className={cx(classes.form({ isEditMode }), className)}
+          data-testid="employee-form"
+        >
           <TextFieldComponent
             label="Id"
             name="id"
