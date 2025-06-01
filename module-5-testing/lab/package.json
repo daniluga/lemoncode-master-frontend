@@ -12,7 +12,7 @@
     "type-check:watch": "npm run type-check -- --watch",
     "test": "vitest -c ./config/test/config.ts",
     "clean": "rimraf dist",
-    "cy:run": "cypress run",
+    "cy:run": "npm run start && cypress run",
     "cy:open": "cypress open",
     "cy:test:ui": "npm run start -- cy:open",
     "pw:run": "playwright test",
