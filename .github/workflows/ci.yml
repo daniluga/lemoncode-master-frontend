@@ -26,4 +26,5 @@ jobs:
           npm run cy:run
       - name: Playwright E2E Tests
         run: |
+          npx playwright install
           npm run pw:run
