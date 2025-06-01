@@ -16,6 +16,7 @@
     "cy:open": "cypress open",
     "cy:test:ui": "npm run start -- cy:open",
     "pw:run": "playwright test",
+    "pw:run:ci": "playwright test --project=chromium",
     "pw:open": "playwright test --ui",
     "pw:test:ui": "npm run start -- pw:open"
   },
