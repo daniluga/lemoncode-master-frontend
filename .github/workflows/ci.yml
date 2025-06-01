@@ -1,0 +1,30 @@
+name: CI workflow
+
+on: pull_request
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: module-5-testing/lab
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install
+        run: |
+          npm install
+          npm install @rollup/rollup-linux-x64-gnu --save-optional
+      - name: Tests
+        run: npm test
+      - name: Start local server
+        run: |
+          npm run start:dev &
+          sleep 5
+      - name: Cypress E2E Tests
+        run: |
+          npm run cy:run
+      - name: Playwright E2E Tests
+        run: |
+          npx playwright install chromium
+          npm run pw:run:ci
