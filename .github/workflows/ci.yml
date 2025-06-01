@@ -26,5 +26,5 @@ jobs:
           npm run cy:run
       - name: Playwright E2E Tests
         run: |
-          npx playwright install
+          npx playwright install chromium
           npm run pw:run:ci
