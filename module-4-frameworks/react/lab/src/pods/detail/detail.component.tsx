@@ -1,11 +1,10 @@
 import React from "react";
 import {
-  Button,
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
+  CardDetailComponent,
+  MemberDetailComponent,
+  PokemonDetailComponent,
+  RickAndMortyDetailComponent,
+} from "./components";
 import {
   CATEGORY,
   MemberDetail,
@@ -34,57 +33,31 @@ export const DetailComponent: React.FC<Props> = (props: Props) => {
   const renderDetails = () => {
     if (isMemberDetail(itemDetail)) {
       return (
-        <>
-          <Typography variant="body2">
-            <strong>Login:</strong> {itemDetail.login}
-          </Typography>
-          <Typography variant="body2">
-            <strong>Company:</strong> {itemDetail.company ?? "N/A"}
-          </Typography>
-          <Typography variant="body2">
-            <strong>Bio:</strong> {itemDetail.bio ?? "N/A"}
-          </Typography>
-        </>
+        <MemberDetailComponent
+          login={itemDetail.login}
+          company={itemDetail.company}
+          bio={itemDetail.bio}
+        />
       );
     }
     if (isPokemonDetail(itemDetail)) {
       return (
-        <>
-          <Typography variant="body2">
-            <strong>Types:</strong> {itemDetail.types}
-          </Typography>
-          <Typography variant="body2">
-            <strong>Weight:</strong> {itemDetail.weight}
-          </Typography>
-          <Typography variant="body2">
-            <strong>Height:</strong> {itemDetail.height}
-          </Typography>
-        </>
+        <PokemonDetailComponent
+          types={itemDetail.types}
+          weight={itemDetail.weight}
+          height={itemDetail.height}
+        />
       );
     }
     if (isRickAndMortyDetail(itemDetail)) {
       return (
-        <>
-          <Typography variant="body2">
-            <strong>Status:</strong> {itemDetail.status}
-          </Typography>
-          <Typography variant="body2">
-            <strong>Species:</strong>
-            {(itemDetail as RickAndMortyDetails).species}
-          </Typography>
-          <Typography variant="body2">
-            <strong>Gender:</strong>
-            {(itemDetail as RickAndMortyDetails).gender}
-          </Typography>
-          <Typography variant="body2">
-            <strong>Origin:</strong>
-            {(itemDetail as RickAndMortyDetails).origin}
-          </Typography>
-          <Typography variant="body2">
-            <strong>Location:</strong>
-            {(itemDetail as RickAndMortyDetails).location}
-          </Typography>
-        </>
+        <RickAndMortyDetailComponent
+          status={itemDetail.status}
+          species={itemDetail.species}
+          gender={itemDetail.gender}
+          origin={itemDetail.origin}
+          location={itemDetail.location}
+        />
       );
     }
   };
@@ -92,44 +65,14 @@ export const DetailComponent: React.FC<Props> = (props: Props) => {
   return (
     <>
       {visible && (
-        <Card
-          sx={{
-            flexGrow: 1,
-            margin: 2,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            position: "sticky",
-          }}
+        <CardDetailComponent
+          id={itemDetail.id}
+          name={itemDetail.name}
+          img={itemDetail.img}
+          onClose={onClose}
         >
-          <Typography
-            color="secondary"
-            variant="h6"
-            style={{ marginTop: "20px", marginBottom: "20px" }}
-          >
-            {itemDetail.name}
-          </Typography>
-          <CardMedia
-            component="img"
-            image={itemDetail.img}
-            alt="avatar"
-            sx={{
-              height: 200,
-              width: 200,
-              objectFit: "cover",
-              borderRadius: "50%",
-            }}
-          />
-          <CardContent style={{ marginTop: "20px", marginBottom: "20px" }}>
-            <Typography variant="body2">
-              <strong>ID:</strong> {itemDetail.id}
-            </Typography>
-            {renderDetails()}
-          </CardContent>
-          <Button color="secondary" variant="contained" onClick={onClose}>
-            Close detail
-          </Button>
-        </Card>
+          {renderDetails()}
+        </CardDetailComponent>
       )}
     </>
   );
